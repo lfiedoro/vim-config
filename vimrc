@@ -17,7 +17,6 @@ set backspace=indent,eol,start
 
 set magic
 set number
-set relativenumber
 set cursorline
 set ruler
 
@@ -178,6 +177,7 @@ if has("autocmd")
 
   " jump to last know position in the file
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+	au BufReadPost * set relativenumber
 
   au FileType c            setl cindent tw=79
   au FileType cpp          setl cindent tw=79
