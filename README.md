@@ -65,6 +65,7 @@ git submodule update
 * &lt;nr&gt;zp - load view number <nr>, think of this as fold paste
 * :Sw - does sudo write of edited file (:w !sudo tee % > /dev/null)
 * :&& - && expands to current file's path in ex mode
+* - - switch between common "things"
 
 ## Motions
 * ai, ii - indented block
