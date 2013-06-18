@@ -23,8 +23,6 @@ set ruler
 " switch between buffers without saving
 set hidden
 
-set path=.,/usr/include,/usr/local/include
-
 set visualbell
 set hlsearch
 
@@ -184,8 +182,7 @@ if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 	au BufReadPost * set relativenumber
 
-  au FileType c            setl cindent tw=79
-  au FileType cpp          setl cindent tw=79
+  au FileType c,cpp        setl cindent tw=79 path=.,/usr/include,/usr/local/include,/usr/lib/gcc/*/*/include
   au FileType java         setl ai ts=4 sw=4 sts=4   expandtab cindent
   au FileType perl         setl ai ts=4 sw=4 sts=4   expandtab cindent
   au FileType python       setl ai ts=4 sw=4 sts=4   expandtab
