@@ -77,11 +77,11 @@ hi Type         ctermfg=146 guifg=#afafdf                           cterm=NONE g
 hi diffAdded    ctermfg=150 guifg=#afdf87
 hi diffRemoved  ctermfg=174 guifg=#df8787
 """ vimdiff {{{3
-hi diffAdd      ctermfg=233  guifg=bg      ctermbg=151 guibg=#afdfaf
+hi diffAdd      ctermfg=235  guifg=bg      ctermbg=151 guibg=#afdfaf
 "hi diffDelete   ctermfg=bg  guifg=bg      ctermbg=186 guibg=#dfdf87 cterm=NONE gui=NONE
-hi diffDelete   ctermfg=NONE  guifg=bg      ctermbg=246 guibg=#949494 cterm=NONE gui=NONE
-hi diffChange   ctermfg=NONE  guifg=bg      ctermbg=181 guibg=#dfafaf
-hi diffText     ctermfg=NONE  guifg=bg      ctermbg=174 guibg=#df8787 cterm=NONE gui=NONE
+hi diffDelete   ctermfg=235  guifg=bg      ctermbg=246 guibg=#949494 cterm=NONE gui=NONE
+hi diffChange   ctermfg=235  guifg=bg      ctermbg=181 guibg=#dfafaf
+hi diffText     ctermfg=233  guifg=bg      ctermbg=174 guibg=#df8787 cterm=NONE gui=NONE
 """ HTML {{{3
 " hi htmlTag      ctermfg=146  guifg=#afafdf
 " hi htmlEndTag   ctermfg=146  guifg=#afafdf
