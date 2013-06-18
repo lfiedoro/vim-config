@@ -76,6 +76,8 @@ set winheight=10
 set winminheight=10
 set winheight=999
 
+let g:no_rust_conceal="yes"
+
 " turn off highlighting by hitting enter
 nmap <silent> <CR> :nohlsearch \| :call MarkMultipleClean()<CR>
 vmap <silent> <CR> :nohlsearch \| :call MarkMultipleClean()<CR>
@@ -188,6 +190,7 @@ if has("autocmd")
   au FileType perl         setl ai ts=4 sw=4 sts=4   expandtab cindent
   au FileType python       setl ai ts=4 sw=4 sts=4   expandtab
   au FileType ruby         setl ai ts=2 sw=2 sts=2   expandtab
+  au FileType rust         setl ai ts=2 sw=2 sts=2 noexpandtab colorcolumn=
   au FileType awk          setl ai ts=4 sw=4 sts=4 noexpandtab
   au FileType html         setl ai ts=4 sw=4 sts=4   expandtab
   au FileType sh,zsh       setl ai ts=4 sw=4 sts=4   expandtab
