@@ -33,12 +33,12 @@ hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=236 guibg=#121212
 hi MatchParen   ctermfg=188 guifg=#dfdfdf ctermbg=68  guibg=#5f87df cterm=bold gui=bold
 " TODO
 " hi MoreMsg
-hi NonText      ctermfg=247 guifg=#9e9e9e ctermbg=236 guibg=#121212 cterm=bold gui=bold
-hi Pmenu        ctermfg=0   guifg=#000000 ctermbg=250 guibg=#bcbcbc
-hi PmenuSel     ctermfg=255 guifg=#eeeeee ctermbg=243 guibg=#767676
-hi PmenuSbar                              ctermbg=252 guibg=#d0d0d0
+hi NonText      ctermfg=247 guifg=#9e9e9e ctermbg=NONE guibg=#121212 cterm=bold gui=bold
+hi Pmenu        ctermfg=0   guifg=#000000 ctermbg=250  guibg=#bcbcbc
+hi PmenuSel     ctermfg=255 guifg=#eeeeee ctermbg=243  guibg=#767676
+hi PmenuSbar                              ctermbg=252  guibg=#d0d0d0
 hi PmenuThumb   ctermfg=243 guifg=#767676
-hi Search       ctermfg=0   guifg=#000000 ctermbg=149 guibg=#afdf5f
+hi Search       ctermfg=0   guifg=#000000 ctermbg=149  guibg=#afdf5f
 hi SignColumn   ctermfg=248 guifg=#a8a8a8
 hi SpecialKey   ctermfg=77  guifg=#5fdf5f
 hi SpellBad     ctermfg=160 guifg=fg      ctermbg=NONE                cterm=underline               guisp=#df0000
