@@ -174,6 +174,14 @@ if has('gui_running')
   set gfn=Droid\ Sans\ Mono\ Dotted\ 8
 endif
 
+if has('gui_gtk') && has('gui_running')
+  let s:border = synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui')
+  exe 'silent !echo ''style "vimfix" { bg[NORMAL] = "' . escape(s:border, '#') . '" }'''.
+        \' > ~/.gtkrc-2.0'
+  exe 'silent !echo ''widget "vim-main-window.*GtkForm" style "vimfix"'''.
+        \' >> ~/.gtkrc-2.0'
+endif
+
 if has("autocmd")
   " enter will work in command edit mode as intended
 	au CmdwinEnter * noremap <buffer><CR> <CR>
