@@ -35,7 +35,8 @@ git submodule update
 * [coffee](https://github.com/kchmck/vim-coffee-script)
 * [bundler](https://github.com/tpope/vim-bundler)
 * [vroom](https://github.com/skalnik/vim-vroom)
-* [crosshairs](https://github.com/chreekat/vim-paren-crosshairs.git)
+* [crosshairs](https://github.com/chreekat/vim-paren-crosshairs)
+* [indentLine](https://github.com/Yggdroot/indentLine)
 * [bling](https://github.com/ivyl/vim-bling)
 
 
