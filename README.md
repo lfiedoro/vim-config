@@ -27,7 +27,6 @@ git submodule update
 * [pathogen](https://github.com/tpope/vim-pathogen)
 * [repeat](https://github.com/tpope/vim-repeat)
 * [scala](https://github.com/derekwyatt/vim-scala)
-* [snipmate](https://github.com/garbas/vim-snipmate)
 * [surround](https://github.com/tpope/vim-surround)
 * [tabular](https://github.com/godlygeek/tabular)
 * [unimpaired](https://github.com/tpope/vim-unimpaired)
@@ -37,6 +36,7 @@ git submodule update
 * [bundler](https://github.com/tpope/vim-bundler)
 * [vroom](https://github.com/skalnik/vim-vroom)
 * [crosshairs](https://github.com/chreekat/vim-paren-crosshairs.git)
+* [bling](https://github.com/ivyl/vim-bling)
 
 
 ##Theme

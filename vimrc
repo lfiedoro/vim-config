@@ -114,6 +114,7 @@ function! ColorColumnToggle()
   endif
 endfunc
 nmap <silent> <leader>cc :call ColorColumnToggle()<CR>
+call matchadd('ColorColumn', '\%79v', 100)
 
 " change to directory of opened file
 nmap <leader>cd :lcd %:h<CR>
