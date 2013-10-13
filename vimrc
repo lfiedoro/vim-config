@@ -105,16 +105,19 @@ nmap - :Switch<cr>
 " show invisibles
 nmap <leader>l :set list!<CR>
 
-" toggle color column
+" toggle smart color column
+let g:color_column_toggle = 0
 function! ColorColumnToggle()
-  if (&colorcolumn == '+1')
-    set colorcolumn=
+  if g:color_column_toggle
+    call matchdelete(g:color_column_toggle)
+    let g:color_column_toggle = 0
   else
-    set colorcolumn=+1
-  endif
+    let g:color_column_toggle = matchadd('ColorColumn', '\%79v', 100)
+  end
 endfunc
 nmap <silent> <leader>cc :call ColorColumnToggle()<CR>
-call matchadd('ColorColumn', '\%79v', 100)
+call ColorColumnToggle()
+
 
 " change to directory of opened file
 nmap <leader>cd :lcd %:h<CR>
@@ -189,6 +192,7 @@ if has("autocmd")
 
   " jump to last know position in the file
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
 	au BufReadPost * set relativenumber
 
   au FileType c,cpp        setl cindent tw=79 path=.,/usr/include,/usr/local/include,/usr/lib/gcc/*/*/include
