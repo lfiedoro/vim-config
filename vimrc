@@ -66,14 +66,6 @@ set textwidth=78
 " nice invisibles
 set listchars=tab:▸\ ,eol:¬
 
-" Auto window resizing
-" Nasty Hack: height must be bigger than minheight on setting.
-" Fails when huge at fist.
-set winwidth=84
-set winheight=10
-set winminheight=10
-set winheight=999
-
 let g:no_rust_conceal="yes"
 
 " turn off highlighting by hitting enter
