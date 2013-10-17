@@ -20,7 +20,6 @@ git submodule update
 * [ctrlp](https://github.com/kien/ctrlp.vim)
 * [fugitive](https://github.com/tpope/vim-fugitive)
 * [gundo](https://github.com/sjl/gundo.vim)
-* [hexhighlight](http://www.vim.org/scripts/script.php?script_id=2937)
 * [markdown](https://github.com/tpope/vim-markdown)
 * [markmultiple](https://github.com/adinapoli/vim-markmultiple)
 * [matchit](http://www.vim.org/scripts/script.php?script_id=39)
