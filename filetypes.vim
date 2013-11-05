@@ -22,6 +22,8 @@ if has("autocmd")
   au FileType markdown         setl tw=77 fo+=t
   au FileType gitcommit        setl tw=72 fo+=t
 
+
+  au FileType javascript       set omnifunc=javascriptcomplete#CompleteJS
   " muut detection
   augroup filetypedetect
     au BufRead,BufNewFile *mutt-* setl filetype=mail tw=72 fo+=t
