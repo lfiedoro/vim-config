@@ -23,9 +23,6 @@ nmap <silent> <leader>S :call SpellingLanguageToggle()<CR>
 " Gundo - visualizing redo/undo changes {{{1
 nmap <leader>g :GundoToggle<CR>
 
-" switch.vim mapping to - {{{1
-nmap - :Switch<cr>
-
 " show invisibles {{{1
 nmap <leader>l :set list!<CR>
 
