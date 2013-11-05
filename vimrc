@@ -1,11 +1,11 @@
 
-source plugin_setup.vim
+runtime plugin_setup.vim
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-source gui.vim
-source mappings.vim
-source filetypes.vim
+runtime gui.vim
+runtime mappings.vim
+runtime filetypes.vim
 
 colorscheme transxoria
 
