@@ -1,4 +1,3 @@
-
 runtime plugin_setup.vim
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
@@ -56,6 +55,9 @@ set cpoptions+=$
 set wildmenu
 
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.pyc
+
+" do not conceal
+set conceallevel=0
 
 if has("autocmd")
   " enter will work in command edit mode as intended
