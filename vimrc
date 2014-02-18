@@ -68,5 +68,5 @@ if has("autocmd")
 
   " set relativenumber by default everywhere
 	au BufReadPost * set relativenumber
+	au BufReadPost * set concealcursor=c
 endif
-
