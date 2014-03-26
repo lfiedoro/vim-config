@@ -81,6 +81,9 @@ function! SudoWrite()
 endfunction
 command! -nargs=0 Sw call SudoWrite()
 
+" :Swq {{{1
+command! -nargs=0 Swq call SudoWrite() | :q
+
 " :Sprunge files to sprunge.us {{{1
 function! Sprunge()
   w !curl -s -F 'sprunge=<-' http://sprunge.us
