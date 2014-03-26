@@ -34,9 +34,6 @@
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule "bundle/matchit"]
-	path = bundle/matchit
-	url = https://github.com/tsaleh/vim-matchit.git
 [submodule "bundle/markmultiple"]
 	path = bundle/markmultiple
 	url = https://github.com/adinapoli/vim-markmultiple.git
@@ -73,3 +70,6 @@
 [submodule "bundle/easymotion"]
 	path = bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/vim-matchit"]
+	path = bundle/vim-matchit
+	url = https://github.com/vim-scripts/matchit.zip
