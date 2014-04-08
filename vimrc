@@ -56,9 +56,6 @@ set wildmenu
 
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.pyc
 
-" do not conceal
-set conceallevel=0
-
 if has("autocmd")
   " enter will work in command edit mode as intended
 	au CmdwinEnter * noremap <buffer><CR> <CR>
