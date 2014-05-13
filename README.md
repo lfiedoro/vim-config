@@ -37,12 +37,15 @@ git submodule update
 * [crosshairs](https://github.com/chreekat/vim-paren-crosshairs)
 * [indentLine](https://github.com/Yggdroot/indentLine)
 * [bling](https://github.com/ivyl/vim-bling)
+* [easymotion](https://github.com/Lokaltog/vim-easymotion)
+* [jedi](https://github.com/davidhalter/jedi-vim)
 
 
 ##Theme
 * Transxoria - modified, transparent [xoria256](http://www.vim.org/scripts/script.php?script_id=2140)
 
 ## Bindings
+* space - easymotion prefix
 * enter - hides higlighting and behaves well in command edit mode
 * \l - toggle show invisibles
 * \h - toggle highligh search matches
