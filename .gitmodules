@@ -73,3 +73,9 @@
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = https://github.com/vim-scripts/matchit.zip
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "bundle/local-vimrc"]
+	path = bundle/local-vimrc
+	url = https://github.com/MarcWeber/vim-addon-local-vimrc.git
