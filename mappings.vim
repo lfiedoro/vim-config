@@ -39,6 +39,19 @@ endfunc
 nmap <silent> <leader>cc :call ColorColumnToggle()<CR>
 call ColorColumnToggle()
 
+" toggle ordinary color column {{{1
+let g:ordinary_color_column_toggle = 0
+function! OrdinaryColorColumnToggle()
+  if g:ordinary_color_column_toggle
+    set colorcolumn=
+    let g:ordinary_color_column_toggle = 0
+  else
+    set colorcolumn=+1
+    let g:ordinary_color_column_toggle = 1
+  end
+endfunc
+nmap <silent> <leader>CC :call OrdinaryColorColumnToggle()<CR>
+
 " change to directory of opened file {{{1
 nmap <leader>cd :lcd %:h<CR>
 

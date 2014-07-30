@@ -50,7 +50,8 @@ git submodule update
 * \l - toggle show invisibles
 * \h - toggle highligh search matches
 * \g - gundo toggle
-* \cc - togle color column at textwidth+1
+* \cc - toggle smart color column at textwidth+1
+* \CC - toggle regular color column at textwidth+1
 * \cd - :lcd %:h
 * \s - togle spell checking
 * \v - edit your vimrc in new tab, config is reloaded on save
