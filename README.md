@@ -9,10 +9,16 @@ It's as simple as that:
 
 ```bash
 git clone https://github.com/ivyl/vim-config.git ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim
 git submodule init
 git submodule update
+```
+
+Newer Vim is fine with $HOME/.vim/vimrc. If you use older one that doens't
+support that feature (check :help vimrc) you need to:
+
+```bash
+ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
 ##Plugins
