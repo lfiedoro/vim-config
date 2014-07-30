@@ -60,6 +60,9 @@ if has("autocmd")
   " enter will work in command edit mode as intended
 	au CmdwinEnter * noremap <buffer><CR> <CR>
 
+  " resize splits to equal size when resizing window
+  au VimResized * :wincmd =
+
   " jump to last know position in the file
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
