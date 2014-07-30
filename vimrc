@@ -15,7 +15,7 @@ filetype plugin on
 set smarttab smartindent autoindent
 
 set fileencoding=utf-8
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 
 set backspace=indent,eol,start
 
@@ -37,7 +37,7 @@ set showmatch matchtime=3 " matching bracket
 set matchpairs+=<:>
 set showfulltag virtualedit=block
 set splitbelow splitright
-set incsearch noignorecase
+set incsearch ignorecase smartcase
 set shortmess+=I showcmd
 
 set fo-=t " no automatic text wrapping
