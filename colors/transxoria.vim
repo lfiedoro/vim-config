@@ -17,18 +17,7 @@ if exists("syntax_on")
 endif
 
 let colors_name = "transxoria"
-" }}}
-
-" Terminal Cursor Colur {{{
-if &term =~ "xterm\\|rxvt"
-  silent !echo -ne "\033]12;orange\007"
-  autocmd VimLeave * silent !echo -ne "\033]112\007"
-elseif &term =~ "screen"
-  silent !echo -ne "\033Ptmux;\033\033]12;orange\007\033\\"
-  autocmd VimLeave * silent !echo -ne "\033Ptmux;\033\033]112\007\033\\"
-endif
 "}}}
-
 " Colours {{{1
 "" General {{{2
 hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=NONE guibg=#333333 cterm=NONE gui=NONE
