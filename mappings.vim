@@ -36,7 +36,7 @@ function! ColorColumnToggle()
     call matchdelete(g:color_column_toggle)
     let g:color_column_toggle = 0
   else
-    let g:color_column_toggle = matchadd('ColorColumn', '\%79v', 100)
+    let g:color_column_toggle = matchadd('ColorColumn', '\M\%79v\.\*', 100)
   end
 endfunc
 nmap <silent> <leader>cc :call ColorColumnToggle()<CR>
@@ -61,7 +61,7 @@ nmap <leader>cd :lcd %:h<CR>
 " toggle relative/normal line numbering {{{1
 function! NumberToggle()
   if(&relativenumber == 1)
-    set number
+    set norelativenumber
   else
     set relativenumber
   endif
