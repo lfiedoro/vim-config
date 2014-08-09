@@ -12,36 +12,50 @@ syntax on
 
 filetype indent on
 filetype plugin on
-set smarttab smartindent autoindent
 
-set fileencoding=utf-8
+
+set encoding=utf-8
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 
 set backspace=indent,eol,start
 
 set magic
 
-set number cursorline
+set synmaxcol=800
+set number relativenumber
+set cursorline
 set ruler
 set scrolloff=8
+set shortmess+=I
+set showcmd
+set visualbell
+set showfulltag
+set splitbelow splitright
+
+
+set virtualedit=block
+
+" when changing (c command) put $ on word boundary and keep it visible
+set cpoptions+=$
 
 set hidden " switch between buffers without saving
 
-set visualbell
 set hlsearch
+set incsearch
+set ignorecase smartcase
 
-
-set nojoinspaces " only one space when joinning
-set nowrap linebreak nolist
 set showmatch matchtime=3 " matching bracket
 set matchpairs+=<:>
-set showfulltag virtualedit=block
-set splitbelow splitright
-set incsearch ignorecase smartcase
-set shortmess+=I showcmd
+
+set smarttab smartindent autoindent
 
 set fo-=t " no automatic text wrapping
 set textwidth=78
+set nojoinspaces " only one space when joinning
+set nowrap linebreak nolist
+
+set wildmenu
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.pyc
 
 set nobackup
 set nowritebackup
@@ -49,12 +63,6 @@ set noswapfile
 set history=1000
 set undolevels=100
 
-" when changing (c command) put $ on word boundary and keep it visible
-set cpoptions+=$
-
-set wildmenu
-
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.pyc
 
 if has("autocmd")
   " enter will work in command edit mode as intended, since by default it's
@@ -68,6 +76,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
   " set relativenumber by default everywhere
-  au BufReadPost * set relativenumber
-  au BufReadPost * set concealcursor=c
+  au BufRead * set relativenumber
+  au BufRead * set concealcursor=c
 endif
