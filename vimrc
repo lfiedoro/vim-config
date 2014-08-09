@@ -32,6 +32,8 @@ set visualbell
 set showfulltag
 set splitbelow splitright
 
+set ttyfast
+set lazyredraw
 
 set virtualedit=block
 
