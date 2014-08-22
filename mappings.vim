@@ -108,3 +108,15 @@ function! Sprunge()
   w !curl -s -F 'sprunge=<-' http://sprunge.us
 endfunction
 command! -nargs=0 Sprunge call Sprunge()
+
+" <leader>h to switch between .h and .cpp {{{1
+function! SwitchCppH()
+  let extension=expand('%:e')
+  let root=expand('%:r')
+  if extension == 'cpp'
+    exec 'e '.root.'.h'
+  elseif extension == 'h'
+    exec 'e '.root.'.cpp'
+  end
+endfunction
+nmap <silent> <leader>h :call SwitchCppH()<CR>

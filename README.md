@@ -76,6 +76,7 @@ ln -s ~/.vim/vimrc ~/.vimrc
 * :Sw - does sudo write of edited file (:w !sudo tee % > /dev/null)
 * :&& - && expands to current file's path in ex mode
 * - - switch between common "things"
+* \h - switch between .h and .cpp files
 * \= - increase gui font size
 * \\- - decrease gui font size
 
