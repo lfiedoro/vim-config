@@ -90,6 +90,10 @@ ln -s ~/.vim/vimrc ~/.vimrc
 * minimalized GUI
 * nice invisibles
 
+## neovim
+Whole configuration and most plugins works with [neovim](http://neovim.org/).
+Just clone repo into `$HOME/.nvim` or link it there.
+
 ## Thanks
 Drew for his [Vimcasts](http://vimcasts.org/) and Practical Vim book
 Derek Wyatt for his [posts on Vim](http://www.derekwyatt.org/vim/)
