@@ -110,13 +110,16 @@ endfunction
 command! -nargs=0 Sprunge call Sprunge()
 
 " <leader>h to switch between .h and .cpp {{{1
-function! SwitchCppH()
+function! SwitchCppH(command)
   let extension=expand('%:e')
   let root=expand('%:r')
   if extension == 'cpp'
-    exec 'e '.root.'.h'
+    exec a:command.' '.root.'.h'
   elseif extension == 'h'
-    exec 'e '.root.'.cpp'
+    exec a:command.' '.root.'.cpp'
   end
 endfunction
-nmap <silent> <leader>h :call SwitchCppH()<CR>
+nmap <silent> <leader>h :call SwitchCppH('e')<CR>
+
+" <leader>H to open complemetary .h / .cpp in new v split{{{1
+nmap <silent> <leader>H :call SwitchCppH('vsp')<CR>
