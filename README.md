@@ -78,6 +78,7 @@ ln -s ~/.vim/vimrc ~/.vimrc
 * - - switch between common "things"
 * \h - switch between .h and .cpp files
 * \H - open complementary .h / .cpp in vertcial split
+* \b - opens tagbar that autocolse
 * \= - increase gui font size
 * \\- - decrease gui font size
 
