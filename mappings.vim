@@ -123,3 +123,6 @@ nmap <silent> <leader>h :call SwitchCppH('e')<CR>
 
 " <leader>H to open complemetary .h / .cpp in new v split{{{1
 nmap <silent> <leader>H :call SwitchCppH('vsp')<CR>
+
+" <leader>b opens tagbar that autoclose {{{1
+nmap <silent> <leader>b :TagbarOpenAutoClose<CR>
