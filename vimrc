@@ -57,7 +57,7 @@ set nojoinspaces " only one space when joinning
 set nowrap linebreak nolist
 
 set wildmenu
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.pyc
+set wildignore+=*.pyc
 
 set nobackup
 set nowritebackup
