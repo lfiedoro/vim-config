@@ -126,3 +126,14 @@ nmap <silent> <leader>H :call SwitchCppH('vsp')<CR>
 
 " <leader>b opens tagbar that autoclose {{{1
 nmap <silent> <leader>b :TagbarOpenAutoClose<CR>
+
+" <leader>f reformats current file using clang-format {{{1
+if !exists('g:clang_style') | let g:clang_style = 'LLVM' | en
+
+function! ClangFormat()
+  normal mf
+  exec ':%!clang-format -style='.g:clang_style
+  normal `fzz
+endfunction
+
+nmap <leader>f :call ClangFormat()<CR>

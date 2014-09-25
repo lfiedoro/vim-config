@@ -53,6 +53,7 @@ see `plugin_setup.vim` for list
 * &lt;nr&gt;zp - load view number <nr>, think of this as fold paste
 * :Sw - does sudo write of edited file (:w !sudo tee % > /dev/null)
 * :&& - && expands to current file's path in ex mode
+* \f - reformat current buffer using clang-format
 * \h - switch between .h and .cpp files
 * \H - open complementary .h / .cpp in vertcial split
 * \b - opens tagbar that autocolse
