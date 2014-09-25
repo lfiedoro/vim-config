@@ -22,29 +22,7 @@ ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
 ##Plugins
-* [commentary](https://github.com/tpope/vim-commentary)
-* [ctrlp](https://github.com/kien/ctrlp.vim)
-* [fugitive](https://github.com/tpope/vim-fugitive)
-* [gundo](https://github.com/sjl/gundo.vim)
-* [markdown](https://github.com/tpope/vim-markdown)
-* [markmultiple](https://github.com/adinapoli/vim-markmultiple)
-* [matchit](http://www.vim.org/scripts/script.php?script_id=39)
-* [pathogen](https://github.com/tpope/vim-pathogen)
-* [repeat](https://github.com/tpope/vim-repeat)
-* [scala](https://github.com/derekwyatt/vim-scala)
-* [surround](https://github.com/tpope/vim-surround)
-* [tabular](https://github.com/godlygeek/tabular)
-* [unimpaired](https://github.com/tpope/vim-unimpaired)
-* [textobj-indent](https://github.com/kana/vim-textobj-indent)
-* [ruby](https://github.com/vim-ruby/vim-ruby)
-* [coffee](https://github.com/kchmck/vim-coffee-script)
-* [bundler](https://github.com/tpope/vim-bundler)
-* [vroom](https://github.com/skalnik/vim-vroom)
-* [crosshairs](https://github.com/chreekat/vim-paren-crosshairs)
-* [indentLine](https://github.com/Yggdroot/indentLine)
-* [bling](https://github.com/ivyl/vim-bling)
-* [easymotion](https://github.com/Lokaltog/vim-easymotion)
-* [jedi](https://github.com/davidhalter/jedi-vim)
+see `plugin_setup.vim` for list
 
 
 ##Theme
@@ -75,7 +53,6 @@ ln -s ~/.vim/vimrc ~/.vimrc
 * &lt;nr&gt;zp - load view number <nr>, think of this as fold paste
 * :Sw - does sudo write of edited file (:w !sudo tee % > /dev/null)
 * :&& - && expands to current file's path in ex mode
-* - - switch between common "things"
 * \h - switch between .h and .cpp files
 * \H - open complementary .h / .cpp in vertcial split
 * \b - opens tagbar that autocolse
@@ -84,9 +61,11 @@ ln -s ~/.vim/vimrc ~/.vimrc
 
 ## Motions
 * ai, ii - indented block
+* ae, ie - entire file
+* a\_, i\_ - underscore
 
 ## Features
-* [pathogen](https://github.com/tpope/vim-pathogen) enabled
+* [vundle](https://github.com/gmarik/Vundle.vim) enabled
 * lot of useful options enabled (wildmenu, encoding, nocompatible, tabs, wraps, etc.)
 * editing gziped files
 * minimalized GUI

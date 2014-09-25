@@ -1,6 +1,4 @@
 runtime plugin_setup.vim
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
 
 runtime gui.vim
 runtime mappings.vim
