@@ -1,8 +1,4 @@
-runtime plugin_setup.vim
-
-runtime gui.vim
-runtime mappings.vim
-runtime filetypes.vim
+runtime plugins.vim
 
 colorscheme transxoria
 
@@ -50,7 +46,7 @@ set matchpairs+=<:>
 set smarttab smartindent autoindent
 
 set fo-=t " no automatic text wrapping
-set textwidth=78
+set textwidth=80
 set nojoinspaces " only one space when joinning
 set nowrap linebreak nolist
 
@@ -63,6 +59,9 @@ set noswapfile
 set history=1000
 set undolevels=100
 
+runtime gui.vim
+runtime mappings.vim
+runtime filetypes.vim
 
 if has("autocmd")
   " enter will work in command edit mode as intended, since by default it's
@@ -78,4 +77,8 @@ if has("autocmd")
   " set relativenumber by default everywhere
   au BufRead * set relativenumber
   au BufRead * set concealcursor=c
+
+  " trailing white space highlight
+  au WinEnter * match Error /\M\s\+$/
+  match Error /\M\s\+$/
 endif

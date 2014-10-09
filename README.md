@@ -2,7 +2,6 @@
 
 ## Requirements
 * Vim (of course)
-* Python support
 
 ## Installation
 It's as simple as that:
@@ -12,6 +11,7 @@ git clone https://github.com/ivyl/vim-config.git ~/.vim
 cd ~/.vim
 git submodule init
 git submodule update
+vim +PluginInstall +qall
 ```
 
 Newer Vim is fine with $HOME/.vim/vimrc. If you use older one that doens't
@@ -22,7 +22,7 @@ ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
 ##Plugins
-see `plugin_setup.vim` for list
+see `plugins.vim` for list
 
 
 ##Theme
@@ -71,6 +71,8 @@ see `plugin_setup.vim` for list
 * editing gziped files
 * minimalized GUI
 * nice invisibles
+* highlighting of characters over 80th column
+* highlighting of tailing white spaces
 
 ## neovim
 Whole configuration and most plugins works with [neovim](http://neovim.org/).

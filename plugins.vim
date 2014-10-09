@@ -17,10 +17,6 @@ call vundle#begin()
 " let vundle manage itself
 Plugin 'gmarik/Vundle.vim'
 
-" other plugins
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-
 Plugin 'kien/ctrlp.vim'
 
 Plugin 'tpope/vim-unimpaired'

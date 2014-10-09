@@ -31,14 +31,33 @@ nmap <leader>l :set list!<CR>
 
 " toggle smart color column {{{1
 let g:color_column_toggle = 0
-function! ColorColumnToggle()
+
+function! ColorColumnWindowSet()
+  if !exists('w:color_column_toggle') | let w:color_column_toggle = 0 | en
   if g:color_column_toggle
-    call matchdelete(g:color_column_toggle)
-    let g:color_column_toggle = 0
+    if !w:color_column_toggle
+      let w:color_column_toggle = matchadd('ColorColumn', '\M\%'.(&textwidth+1).'v\.\+', 100)
+    end
   else
-    let g:color_column_toggle = matchadd('ColorColumn', '\M\%79v\.\*', 100)
+    if w:color_column_toggle
+      call matchdelete(w:color_column_toggle)
+      let w:color_column_toggle = 0
+    end
   end
 endfunc
+
+function! ColorColumnToggle()
+  if g:color_column_toggle
+    let g:color_column_toggle = 0
+  else
+    let g:color_column_toggle = 1
+  end
+
+  windo call ColorColumnWindowSet()
+endfunc
+
+au WinEnter * call ColorColumnWindowSet()
+
 nmap <silent> <leader>cc :call ColorColumnToggle()<CR>
 call ColorColumnToggle()
 

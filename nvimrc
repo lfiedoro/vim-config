@@ -1,1 +1,1 @@
-runtime vimrc
+vimrc
