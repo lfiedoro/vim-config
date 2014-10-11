@@ -7,6 +7,9 @@ vmap <silent> <CR> :nohlsearch \| :call MarkMultipleClean()<CR>
 " navigate through buffers easily {{{1
 nmap <silent> gb :CtrlPBuffer<CR>
 
+" navigate through tags easily {{{1
+nmap <silent> gy :CtrlPTag<CR>
+
 " spell checking {{{1
 nmap <silent> <leader>s :set spell!<CR>
 

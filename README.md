@@ -47,6 +47,7 @@ see `plugins.vim` for list
 * &lt;C-j&gt; - move your code one line down
 * &lt;C-p&gt; - file search/open (ctrlp plugin)
 * gb - open ctrl-p buffer browsing
+* gy - open ctrl-p tag browsing
 * \r - run current/last test file
 * \R - run nearest/last neaerest test
 * &lt;nr&gt;zy - save view number <nr>, think of this as fold yank
