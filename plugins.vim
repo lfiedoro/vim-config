@@ -7,6 +7,7 @@ let g:tex_conceal= ''
 
 let g:local_vimrc = {'names':['.local.vim'],'hash_fun':'LVRHashOfFile'}
 
+let g:indentLine_char = '¦'
 
 " Vundle
 

@@ -9,7 +9,7 @@ filetype plugin on
 
 
 set encoding=utf-8
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set listchars=tab:▸\ ,eol:¬
 
 set backspace=indent,eol,start
 
