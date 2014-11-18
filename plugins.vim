@@ -18,6 +18,8 @@ call vundle#begin()
 " let vundle manage itself
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'john2x/flatui.vim'
+
 Plugin 'kien/ctrlp.vim'
 
 Plugin 'tpope/vim-unimpaired'
