@@ -13,9 +13,6 @@ nmap <silent> gy :CtrlPTag<CR>
 " spell checking {{{1
 nmap <silent> <leader>s :set spell!<CR>
 
-" tab to jump between matching brackets is easier than % {{{1
-map <tab> %
-
 " toggle spelling language {{{1
 function! SpellingLanguageToggle()
   if (&spelllang == 'pl')
