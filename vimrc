@@ -1,6 +1,11 @@
 runtime plugins.vim
 
-colorscheme transxoria
+if exists('$LIGHT_MODE')
+  set background=light
+  colorscheme flatui
+else
+  colorscheme transxoria
+end
 
 syntax on
 
