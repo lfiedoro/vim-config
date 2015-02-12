@@ -128,6 +128,19 @@ function! Sprunge()
 endfunction
 command! -nargs=0 Sprunge call Sprunge()
 
+" :TPane - executing in tmux pane {{{1
+function! s:TPane(request)
+  if exists('g:tpane_id')
+    let pane_id = g:tpane_pane_id
+  else
+    let pane_id = 2
+  endif
+
+  call system('tmux setb "'.a:request."\n".'"')
+  call system('tmux pasteb -t '.pane_id)
+endfunction
+command! -nargs=* TPane call s:TPane(<q-args>)
+
 " <leader>h to switch between .h and .cpp {{{1
 function! SwitchCppH(command)
   let extension=expand('%:e')

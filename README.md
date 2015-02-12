@@ -61,6 +61,14 @@ see `plugins.vim` for list
 * \= - increase gui font size
 * \\- - decrease gui font size
 
+## Commands
+* :Sw - sudo write
+* :Swq - sudo write and quit
+* :Sprunge - paste to sprunge
+* :TPane - execute command in tmux pane
+
+See `mappings.vim` for more details.
+
 ## Motions
 * ai, ii - indented block
 * ae, ie - entire file
