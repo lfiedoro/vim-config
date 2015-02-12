@@ -136,8 +136,7 @@ function! s:TPane(request)
     let pane_id = 2
   endif
 
-  call system('tmux setb "'.a:request."\n".'"')
-  call system('tmux pasteb -t '.pane_id)
+  call system('tmux send-keys -t '.pane_id.' "'.a:request."\n".'"')
 endfunction
 command! -nargs=* TPane call s:TPane(<q-args>)
 
