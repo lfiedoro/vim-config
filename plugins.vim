@@ -35,6 +35,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'nvie/vim-flake8'
 
 Plugin 'adinapoli/vim-markmultiple'
 Plugin 'godlygeek/tabular'
@@ -52,5 +53,9 @@ Plugin 'MarcWeber/vim-addon-local-vimrc'
 
 Plugin 'Yggdroot/indentLine'
 Plugin 'ivyl/vim-bling'
+
+" python dependant plugins
+Plugin 'davidhalter/jedi-vim'
+Plugin 'simnalamburt/vim-mundo' " forked from sjl/gundo.vim
 
 call vundle#end()
