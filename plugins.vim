@@ -11,9 +11,9 @@ let g:indentLine_char = '¦'
 
 " Vundle
 
-set runtimepath+=~/.vim/bundle/Vundle.vim
+set runtimepath+=~/.config/nvim/bundle/Vundle.vim
 
-call vundle#begin()
+call vundle#begin("~/.config/nvim/bundle")
 
 " let vundle manage itself
 Plugin 'gmarik/Vundle.vim'

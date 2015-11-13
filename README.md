@@ -1,25 +1,20 @@
-# Vim Awesome Configuration
+# (N)Vim Awesome Configuration
 
 ## Requirements
-* Vim (of course)
+* (*N)Vim (of course)
 
 ## Installation
 It's as simple as that:
 
 ```bash
-git clone https://github.com/ivyl/vim-config.git ~/.vim
-cd ~/.vim
+git clone https://github.com/ivyl/vim-config.git ~/.config/nvim
+cd ~/.config/nvim
 git submodule init
 git submodule update
-vim +PluginInstall +qall
+nvim +PluginInstall +qall
 ```
 
-Newer Vim is fine with $HOME/.vim/vimrc. If you use older one that doens't
-support that feature (check :help vimrc) you need to:
-
-```bash
-ln -s ~/.vim/vimrc ~/.vimrc
-```
+I recommend setting VISUAL and EDITOR enviromental variables to nvim.
 
 ##Plugins
 see `plugins.vim` for list
@@ -83,9 +78,10 @@ See `mappings.vim` for more details.
 * highlighting of characters over 80th column
 * highlighting of tailing white spaces
 
-## neovim
-Whole configuration and most plugins works with [neovim](http://neovim.org/).
-Just clone repo into `$HOME/.nvim` or link it there.
+## Legacy Vim
+From now on it's kinda not supported as paths for plugins are hardcoded to
+follow new XDG notation. I may fix that in the future when I'll encounter a
+machine where I can't install nvim.
 
 ## Thanks
 Drew for his [Vimcasts](http://vimcasts.org/) and Practical Vim book
