@@ -9,6 +9,7 @@ let g:local_vimrc = {'names':['.local.vim'],'hash_fun':'LVRHashOfFile'}
 
 let g:indentLine_char = '¦'
 
+let g:gruvbox_color_column='faded_red'
 " Vundle
 
 set runtimepath+=~/.config/nvim/bundle/Vundle.vim
@@ -53,6 +54,8 @@ Plugin 'MarcWeber/vim-addon-local-vimrc'
 
 Plugin 'Yggdroot/indentLine'
 Plugin 'ivyl/vim-bling'
+
+Plugin 'morhetz/gruvbox'
 
 " python dependant plugins
 Plugin 'davidhalter/jedi-vim'

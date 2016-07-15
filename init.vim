@@ -4,7 +4,8 @@ if exists('$LIGHT_MODE')
   set background=light
   colorscheme flatui
 else
-  colorscheme transxoria
+  set background=dark
+  colorscheme gruvbox
 end
 
 syntax on
