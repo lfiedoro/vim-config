@@ -21,7 +21,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'john2x/flatui.vim'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
 
 Plugin 'tpope/vim-unimpaired'
