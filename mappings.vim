@@ -140,6 +140,13 @@ function! s:TPane(request)
 endfunction
 command! -nargs=* TPane call s:TPane(<q-args>)
 
+" :TSplit - executing in tmux pane {{{1
+function! s:TSplit(request)
+  call system('tmux split-window -l 10 '.' "'.a:request."; sleep 2".'"')
+  call system('tmux last-pane')
+endfunction
+command! -nargs=* TSplit call s:TSplit(<q-args>)
+
 " <leader>h to switch between .h and .cpp {{{1
 function! SwitchCppH(command)
   let extension=expand('%:e')
@@ -168,3 +175,17 @@ function! ClangFormat()
 endfunction
 
 nmap <leader>f :call ClangFormat()<CR>
+
+
+" <leader>cs and <leader>cg cscope searches {{{1
+
+" add any cscope database in current directory
+if filereadable("cscope.out")
+    cs add cscope.out
+" else add the database pointed to by environment variable
+elseif $CSCOPE_DB != ""
+    cs add $CSCOPE_DB
+endif
+
+nmap <leader>cs :cs find s <C-r><C-w><CR>
+nmap <leader>cg :cs find g <C-r><C-w><CR>
