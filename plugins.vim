@@ -10,6 +10,11 @@ let g:local_vimrc = {'names':['.local.vim'],'hash_fun':'LVRHashOfFile'}
 let g:indentLine_char = '¦'
 
 let g:gruvbox_color_column='faded_red'
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/usr/lib64/clang'
+
 " Vundle
 
 set runtimepath+=~/.config/nvim/bundle/Vundle.vim
@@ -58,7 +63,9 @@ Plugin 'ivyl/vim-bling'
 Plugin 'morhetz/gruvbox'
 
 " python dependant plugins
-Plugin 'davidhalter/jedi-vim'
 Plugin 'simnalamburt/vim-mundo' " forked from sjl/gundo.vim
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'zchee/deoplete-jedi'
+Plugin 'zchee/deoplete-clang'
 
 call vundle#end()
