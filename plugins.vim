@@ -17,55 +17,61 @@ let g:deoplete#sources#clang#clang_header = '/usr/lib64/clang'
 
 " Vundle
 
-set runtimepath+=~/.config/nvim/bundle/Vundle.vim
+set runtimepath+=~/.config/nvim/plugs/vim-plug/
+runtime plug.vim
 
-call vundle#begin("~/.config/nvim/bundle")
+call plug#begin("~/.config/nvim/plugs")
 
-" let vundle manage itself
-Plugin 'gmarik/Vundle.vim'
+" let plug manage itself
+Plug 'junegunn/vim-plug'
 
-Plugin 'john2x/flatui.vim'
+Plug 'john2x/flatui.vim'
 
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'rking/ag.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rking/ag.vim'
 
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-bundler'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-bundler'
 
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'nvie/vim-flake8'
+Plug 'vim-ruby/vim-ruby'
+Plug 'derekwyatt/vim-scala'
+Plug 'kchmck/vim-coffee-script'
+Plug 'nvie/vim-flake8'
 
-Plugin 'adinapoli/vim-markmultiple'
-Plugin 'godlygeek/tabular'
 
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'chreekat/vim-paren-crosshairs'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'kana/vim-textobj-entire'
-Plugin 'kana/vim-textobj-underscore'
+Plug 'adinapoli/vim-markmultiple'
+Plug 'godlygeek/tabular'
 
-Plugin 'MarcWeber/vim-addon-local-vimrc'
+Plug 'majutsushi/tagbar'
+Plug 'vim-scripts/matchit.zip'
+Plug 'chreekat/vim-paren-crosshairs'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-underscore'
 
-Plugin 'Yggdroot/indentLine'
-Plugin 'ivyl/vim-bling'
+Plug 'MarcWeber/vim-addon-local-vimrc'
 
-Plugin 'morhetz/gruvbox'
+Plug 'Yggdroot/indentLine'
+Plug 'ivyl/vim-bling'
 
-" python dependant plugins
-Plugin 'simnalamburt/vim-mundo' " forked from sjl/gundo.vim
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'zchee/deoplete-jedi'
-Plugin 'zchee/deoplete-clang'
+Plug 'morhetz/gruvbox'
 
-call vundle#end()
+Plug 'simnalamburt/vim-mundo'
+
+" deoplete
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-clang'
+
+call plug#end()
