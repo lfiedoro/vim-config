@@ -1,8 +1,9 @@
 .netrwhist
+.init.vim-rplugin~
 .*.swp
 .swp
 doc/tags
 view/*
-bundle/*
+plugs/*
 shada/*
 spell/*
