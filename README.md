@@ -11,17 +11,23 @@ git clone https://github.com/ivyl/vim-config.git ~/.config/nvim
 cd ~/.config/nvim
 git submodule init
 git submodule update
-nvim +PluginInstall +qall
+nvim +PlugInstall +qall
 ```
 
-I recommend setting VISUAL and EDITOR enviromental variables to nvim.
+Then, from time to time, run:
 
-##Plugins
-see `plugins.vim` for list
+```
+nvim +PlugUpgrade +PlugUpdate +qall
+```
+
+I also recommend setting VISUAL and EDITOR enviromental variables to nvim.
+
+## Plugins
+See `plugins.vim` for list.
 
 
-##Theme
-* Transxoria - modified, transparent [xoria256](http://www.vim.org/scripts/script.php?script_id=2140)
+## Theme
+* [gruvbox256](https://github.com/morhetz/gruvbox)
 
 ## Bindings
 * space - easymotion prefix
@@ -64,13 +70,13 @@ see `plugins.vim` for list
 
 See `mappings.vim` for more details.
 
-## Motions
+## Additional Motions
 * ai, ii - indented block
 * ae, ie - entire file
 * a\_, i\_ - underscore
 
 ## Features
-* [vundle](https://github.com/gmarik/Vundle.vim) enabled
+* [vim-plug](https://github.com/junegunn/vim-plug) enabled
 * lot of useful options enabled (wildmenu, encoding, nocompatible, tabs, wraps, etc.)
 * editing gziped files
 * minimalized GUI
@@ -78,11 +84,12 @@ See `mappings.vim` for more details.
 * highlighting of characters over 80th column
 * highlighting of tailing white spaces
 
-## Legacy Vim
+## "Legacy" Vim
 From now on it's kinda not supported as paths for plugins are hardcoded to
 follow new XDG notation. I may fix that in the future when I'll encounter a
 machine where I can't install nvim.
 
 ## Thanks
-Drew for his [Vimcasts](http://vimcasts.org/) and Practical Vim book
+Drew for his [Vimcasts](http://vimcasts.org/) and Practical Vim book.
+
 Derek Wyatt for his [posts on Vim](http://www.derekwyatt.org/vim/)
