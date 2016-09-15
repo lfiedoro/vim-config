@@ -91,6 +91,9 @@ if has("autocmd")
   au BufRead * set relativenumber
   au BufRead * set concealcursor=c
 
+  " never conceal
+  au WinEnter * set conceallevel=0
+
   " trailing white space highlight
   au WinEnter * match Error /\M\s\+$/
   match Error /\M\s\+$/
