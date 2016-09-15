@@ -19,8 +19,6 @@ set listchars=tab:▸\ ,eol:¬
 
 set backspace=indent,eol,start
 
-set magic
-
 set synmaxcol=800
 set number relativenumber
 set cursorline
@@ -42,6 +40,9 @@ set cpoptions+=$
 
 set hidden " switch between buffers without saving
 
+set magic " easier regexps
+
+" search incrementally, with highlighting and preview
 set hlsearch
 set incsearch
 set ignorecase smartcase
@@ -51,17 +52,20 @@ set matchpairs+=<:>
 
 set smarttab smartindent autoindent
 
-set fo-=t " no automatic text wrapping
+set formatoptions-=t " no automatic text wrapping
 set textwidth=80
-set nojoinspaces " only one space when joinning
+set nojoinspaces " only one space when joining
 set nowrap linebreak nolist
 
+" easier tabbing through alternative in command mode
 set wildmenu
 set wildignore+=*.pyc
 
+" do not write swap files, what is lot is lost
 set nobackup
 set nowritebackup
 set noswapfile
+
 set history=1000
 set undolevels=100
 
