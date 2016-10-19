@@ -56,8 +56,10 @@ See `plugins.vim` for list.
 * :Sw - does sudo write of edited file (:w !sudo tee % > /dev/null)
 * :&& - && expands to current file's path in ex mode
 * \f - reformat current buffer using clang-format
-* \h - switch between .h and .cpp files
-* \H - open complementary .h / .cpp in vertcial split
+* \h - switch between .h and .c files
+* \H - open complementary .h / .c in vertcial split
+* \j - switch between .h and .cpp files
+* \J - open complementary .h / .cpp in vertcial split
 * \b - opens tagbar that autocolse
 * \= - increase gui font size
 * \\- - decrease gui font size

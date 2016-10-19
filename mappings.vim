@@ -147,20 +147,26 @@ function! s:TSplit(request)
 endfunction
 command! -nargs=* TSplit call s:TSplit(<q-args>)
 
-" <leader>h to switch between .h and .cpp {{{1
-function! SwitchCppH(command)
+" <leader>j to switch between .h and .cpp {{{1
+function! SwitchCH(command, alt_ext)
   let extension=expand('%:e')
   let root=expand('%:r')
-  if extension == 'cpp'
+  if extension == a:alt_ext
     exec a:command.' '.root.'.h'
   elseif extension == 'h'
-    exec a:command.' '.root.'.cpp'
+    exec a:command.' '.root.'.'.a:alt_ext
   end
 endfunction
-nmap <silent> <leader>h :call SwitchCppH('e')<CR>
+nmap <silent> <leader>j :call SwitchCH('e', 'cpp')<CR>
 
-" <leader>H to open complemetary .h / .cpp in new v split{{{1
-nmap <silent> <leader>H :call SwitchCppH('vsp')<CR>
+" <leader>J to open complemetary .h / .cpp in new v split{{{1
+nmap <silent> <leader>J :call SwitchCH('vsp', 'cpp')<CR>
+
+" <leader>h to switch between .h and .c{{{1
+nmap <silent> <leader>h :call SwitchCH('e', 'c')<CR>
+
+" <leader>H to open complemetary .h / .c in new v split{{{1
+nmap <silent> <leader>H :call SwitchCH('vsp', 'c')<CR>
 
 " <leader>b opens tagbar that autoclose {{{1
 nmap <silent> <leader>b :TagbarOpenAutoClose<CR>
