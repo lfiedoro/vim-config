@@ -65,6 +65,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'ivyl/vim-bling'
 
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 
 Plug 'simnalamburt/vim-mundo'
 

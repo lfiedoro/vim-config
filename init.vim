@@ -1,7 +1,7 @@
 runtime plugins.vim
 
 set background=dark
-colorscheme gruvbox
+colorscheme solarized
 
 syntax on
 
