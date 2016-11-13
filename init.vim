@@ -1,12 +1,7 @@
 runtime plugins.vim
 
-if exists('$LIGHT_MODE')
-  set background=light
-  colorscheme flatui
-else
-  set background=dark
-  colorscheme gruvbox
-end
+set background=dark
+colorscheme gruvbox
 
 syntax on
 

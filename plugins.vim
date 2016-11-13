@@ -28,8 +28,6 @@ runtime plug.vim
 
 call plug#begin("~/.config/nvim/plugs")
 
-Plug 'john2x/flatui.vim'
-
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
 
