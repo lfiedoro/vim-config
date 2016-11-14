@@ -197,3 +197,7 @@ endif
 
 nmap <leader>cs :cs find s <C-r><C-w><CR>
 nmap <leader>cg :cs find g <C-r><C-w><CR>
+
+" <leader>rb and <leader>so git signoffs {{{1
+nmap <leader>rb oReviewed-by: <C-r>=system("git config user.name")<CR><ESC>kJA<<C-r>=system("git config user.email")<CR><ESC>kJ$r>
+nmap <leader>so oSigned-off-by: <C-r>=system("git config user.name")<CR><ESC>kJA<<C-r>=system("git config user.email")<CR><ESC>kJ$r>
