@@ -21,7 +21,8 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/lib64/clang'
 
-" Vundle
+let g:markdown_syntax_conceal = 0
+let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cpp']
 
 set runtimepath+=~/.config/nvim/plugs/vim-plug/
 runtime plug.vim
