@@ -32,6 +32,8 @@ nmap <leader>l :set list!<CR>
 " toggle smart color column {{{1
 let g:color_column_toggle = 0
 
+hi ColorColumn  ctermbg=red ctermfg=black
+
 function! ColorColumnWindowSet()
   if !exists('w:color_column_toggle') | let w:color_column_toggle = 0 | en
   if g:color_column_toggle

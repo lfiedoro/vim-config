@@ -89,7 +89,7 @@ if has("autocmd")
   " never conceal
   au WinEnter * set conceallevel=0
 
-  " trailing white space highlight
-  au WinEnter * match Error /\M\s\+$/
-  match Error /\M\s\+$/
+  " tailing white space highlight
+  au WinEnter * match ColorColumn /\M\s\+$/
+  match ColorColumn /\M\s\+$/
 endif
