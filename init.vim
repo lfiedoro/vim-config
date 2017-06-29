@@ -55,6 +55,7 @@ set nowrap linebreak nolist
 " easier tabbing through alternative in command mode
 set wildmenu
 set wildignore+=*.pyc
+set wildignore+=*.o
 
 " do not write swap files, what is lot is lost
 set nobackup
