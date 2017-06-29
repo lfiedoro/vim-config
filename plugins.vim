@@ -70,6 +70,8 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'simnalamburt/vim-mundo'
 
+Plug 'felipec/notmuch-vim'
+
 " deoplete
 function! DoRemote(arg)
   UpdateRemotePlugins

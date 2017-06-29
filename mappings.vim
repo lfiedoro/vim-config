@@ -201,3 +201,9 @@ nmap <leader>cg :cs find g <C-r><C-w><CR>
 " <leader>rb and <leader>so git signoffs {{{1
 nmap <leader>rb oReviewed-by: <C-r>=system("git config user.name")<CR><ESC>kJA<<C-r>=system("git config user.email")<CR><ESC>kJ$r>
 nmap <leader>so oSigned-off-by: <C-r>=system("git config user.name")<CR><ESC>kJA<<C-r>=system("git config user.email")<CR><ESC>kJ$r>
+
+" <leader>ss for email signature {{{1
+nmap <leader>ss o<CR>-- <CR>Cheers,<CR>Arek<ESC>
+
+" <leader>ab access addrbook {{{1
+nmap <leader>ab :read !addrbook<cr>
