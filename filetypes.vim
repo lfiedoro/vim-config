@@ -22,6 +22,7 @@ if has("autocmd")
 
   au FileType markdown         setl tw=77 fo+=t
   au FileType gitcommit        setl tw=72 fo+=t
+  au FileType gitcommit        setl spell
 
   au FileType javascript       set omnifunc=javascriptcomplete#CompleteJS
 
