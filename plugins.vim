@@ -78,6 +78,8 @@ Plug 'simnalamburt/vim-mundo'
 
 Plug 'felipec/notmuch-vim'
 
+Plug 'mesonbuild/meson', { 'rtp': 'data/syntax-highlighting/vim' }
+
 " deoplete
 function! DoRemote(arg)
   UpdateRemotePlugins
