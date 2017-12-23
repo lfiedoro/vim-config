@@ -24,13 +24,19 @@ let g:deoplete#sources#clang#clang_header = '/usr/lib64/clang'
 let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cpp']
 
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+
 set runtimepath+=~/.config/nvim/plugs/vim-plug/
 runtime plug.vim
 
 call plug#begin("~/.config/nvim/plugs")
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
