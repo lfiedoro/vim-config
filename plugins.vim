@@ -19,17 +19,12 @@ let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cpp']
 
 let g:ackprg = 'ag --vimgrep --smart-case'
-cnoreabbrev ag Ack
-cnoreabbrev aG Ack
-cnoreabbrev Ag Ack
-cnoreabbrev AG Ack
 
 set runtimepath+=~/.config/nvim/plugs/vim-plug/
 runtime plug.vim
 
 call plug#begin("~/.config/nvim/plugs")
 
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 
 Plug 'tpope/vim-unimpaired'
@@ -81,5 +76,11 @@ endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-clang'
+Plug '$HOME/.fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
+
+nnoremap <C-p> :Files<CR>
+nnoremap gb :Buffers<CR>
+nnoremap <C-y> :Tags<CR>
