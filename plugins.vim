@@ -84,4 +84,4 @@ call plug#end()
 
 nnoremap <C-p> :Files<CR>
 nnoremap gb :Buffers<CR>
-nnoremap <C-y> :Tags<CR>
+nnoremap gy :Tags<CR>
