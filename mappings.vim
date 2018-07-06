@@ -125,6 +125,16 @@ function! Sprunge()
 endfunction
 command! -nargs=0 Sprunge call Sprunge()
 
+" :Rename new_name - rename the <cword> in all the files in the arglist {{{1
+function Rename(new_name)
+  let old_name=expand('<cword>')
+  let cmd=':argdo :%s/\<' . old_name . '\>/' . a:new_name . '/ge'
+  echo
+  execute cmd
+  execute "normal \<C-O>"
+endfunction
+command! -nargs=1 Rename call Rename(<q-args>)
+
 " :TPane - executing in tmux pane {{{1
 function! s:TPane(request)
   if exists('g:tpane_id')
