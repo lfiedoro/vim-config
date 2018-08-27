@@ -108,7 +108,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 
 " writing to protected file using :Sw {{{1
 function! SudoWrite()
-  w !sudo dd of=%
+  w sudo://%
   e!
 endfunction
 command! -nargs=0 Sw call SudoWrite()

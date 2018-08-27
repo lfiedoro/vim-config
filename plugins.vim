@@ -20,6 +20,8 @@ let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cp
 
 let g:ackprg = 'ag --vimgrep --smart-case'
 
+let g:suda#prefix = 'sudo://'
+
 set runtimepath+=~/.config/nvim/plugs/vim-plug/
 runtime plug.vim
 
@@ -69,6 +71,8 @@ Plug 'felipec/notmuch-vim'
 
 Plug 'mesonbuild/meson', { 'rtp': 'data/syntax-highlighting/vim' }
 Plug 'igankevich/mesonic'
+
+Plug 'lambdalisue/suda.vim'
 
 " deoplete
 function! DoRemote(arg)
