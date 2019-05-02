@@ -20,6 +20,9 @@ let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cp
 
 let g:ackprg = 'ag --vimgrep --smart-case'
 
+let g:editorconfig_verbose = 1
+let g:editorconfig_root_chdir = 1
+
 let g:suda#prefix = 'sudo://'
 
 set runtimepath+=~/.config/nvim/plugs/vim-plug/
@@ -57,7 +60,7 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-underscore'
 
-Plug 'MarcWeber/vim-addon-local-vimrc'
+Plug 'sgur/vim-editorconfig'
 
 Plug 'Yggdroot/indentLine'
 Plug 'ivyl/vim-bling'
