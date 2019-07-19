@@ -77,6 +77,8 @@ Plug 'zchee/deoplete-clang'
 Plug '$HOME/.fzf'
 Plug 'junegunn/fzf.vim'
 
+Plug 'rhysd/conflict-marker.vim'
+
 call plug#end()
 
 nnoremap <C-p> :Files<CR>
