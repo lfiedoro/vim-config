@@ -8,6 +8,7 @@ syntax on
 filetype indent on
 filetype plugin on
 
+set nomodeline " "security"
 
 set listchars=tab:▸\ ,eol:¬
 
