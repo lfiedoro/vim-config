@@ -9,12 +9,8 @@ filetype indent on
 filetype plugin on
 
 
-set encoding=utf-8
 set listchars=tab:▸\ ,eol:¬
 
-set backspace=indent,eol,start
-
-set synmaxcol=800
 set number relativenumber
 set cursorline
 set ruler
@@ -25,7 +21,6 @@ set visualbell
 set showfulltag
 set splitbelow splitright
 
-set ttyfast
 set lazyredraw
 
 set virtualedit=block
@@ -45,30 +40,23 @@ set ignorecase smartcase
 set showmatch matchtime=3 " matching bracket
 set matchpairs+=<:>
 
-set smarttab smartindent autoindent
+set smartindent
 
 set formatoptions-=t " no automatic text wrapping
 set textwidth=80
 set nojoinspaces " only one space when joining
-set nowrap linebreak nolist
+set nowrap linebreak
+
+" preview :s
+set inccommand=nosplit
 
 " easier tabbing through alternative in command mode
-set wildmenu
 set wildignore+=*.pyc
 set wildignore+=*.o
 
 " do not write swap files, what is lot is lost
-set nobackup
-set nowritebackup
-set noswapfile
+set nobackup nowritebackup noswapfile
 
-set history=1000
-set undolevels=100
-
-" disable mouse
-set mouse=
-
-runtime gui.vim
 runtime mappings.vim
 runtime filetypes.vim
 

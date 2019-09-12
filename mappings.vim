@@ -8,18 +8,8 @@ vmap <silent> <CR> :nohlsearch \| :call MarkMultipleClean()<CR>
 " spell checking {{{1
 nmap <silent> <leader>s :set spell!<CR>
 
-" toggle spelling language {{{1
-function! SpellingLanguageToggle()
-  if (&spelllang == 'pl')
-    set spelllang=en
-  else
-    set spelllang=pl
-  endif
-endfunc
-nmap <silent> <leader>S :call SpellingLanguageToggle()<CR>
-
 " Gundo - visualizing redo/undo changes {{{1
-nmap <leader>g :GundoToggle<CR>
+nmap <leader>u :MundoToggle<CR>
 
 " show invisibles {{{1
 nmap <leader>l :set list!<CR>
@@ -108,7 +98,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 
 " writing to protected file using :Sw {{{1
 function! SudoWrite()
-  w sudo://%
+  w suda://%
   e!
 endfunction
 command! -nargs=0 Sw call SudoWrite()
@@ -177,31 +167,6 @@ nmap <silent> <leader>H :call SwitchCH('vsp', 'c')<CR>
 
 " <leader>b opens tagbar that autoclose {{{1
 nmap <silent> <leader>b :TagbarOpenAutoClose<CR>
-
-" <leader>f reformats current file using clang-format {{{1
-if !exists('g:clang_style') | let g:clang_style = 'LLVM' | en
-
-function! ClangFormat()
-  normal mf
-  exec ':%!clang-format -style='.g:clang_style
-  normal `fzz
-endfunction
-
-nmap <leader>f :call ClangFormat()<CR>
-
-
-" <leader>cs and <leader>cg cscope searches {{{1
-
-" add any cscope database in current directory
-if filereadable("cscope.out")
-    cs add cscope.out
-" else add the database pointed to by environment variable
-elseif $CSCOPE_DB != ""
-    cs add $CSCOPE_DB
-endif
-
-nmap <leader>cs :cs find s <C-r><C-w><CR>
-nmap <leader>cg :cs find g <C-r><C-w><CR>
 
 " <leader>rb and <leader>so git signoffs {{{1
 nmap <leader>rb oReviewed-by: <C-r>=system("git config user.name")<CR><ESC>kJA<<C-r>=system("git config user.email")<CR><ESC>kJ$r>

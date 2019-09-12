@@ -38,15 +38,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-bundler'
 
 Plug 'vim-ruby/vim-ruby'
 Plug 'derekwyatt/vim-scala'
-Plug 'kchmck/vim-coffee-script'
-Plug 'nvie/vim-flake8'
-
-Plug 'benekastah/neomake'
 
 Plug 'adinapoli/vim-markmultiple'
 Plug 'godlygeek/tabular'
@@ -65,15 +59,11 @@ Plug 'sgur/vim-editorconfig'
 Plug 'Yggdroot/indentLine'
 Plug 'ivyl/vim-bling'
 
-Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'simnalamburt/vim-mundo'
 
-Plug 'felipec/notmuch-vim'
-
 Plug 'mesonbuild/meson', { 'rtp': 'data/syntax-highlighting/vim' }
-Plug 'igankevich/mesonic'
 
 Plug 'lambdalisue/suda.vim'
 
