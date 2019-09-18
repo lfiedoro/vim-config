@@ -58,6 +58,8 @@ set wildignore+=*.o
 " do not write swap files, what is lot is lost
 set nobackup nowritebackup noswapfile
 
+set tags^=./.git/tags;
+
 runtime mappings.vim
 runtime filetypes.vim
 
