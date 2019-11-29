@@ -176,5 +176,10 @@ nmap <leader>ack oAcked-by: <C-r>=system("git config user.name")<CR><ESC>kJA<<C-
 " <leader>ss for email signature {{{1
 nmap <leader>ss o<CR>-- <CR>Cheers,<CR>Arek<ESC>
 
-" <leader>ab access addrbook {{{1
-nmap <leader>ab :read !addrbook<cr>
+" <leader>ab access addrbook {{{3
+function! InsertAddress(line)
+  call append(line('.'), a:line)
+  normal! J
+endfunction
+
+nmap <leader>ab :call fzf#run({'source': 'notmuch address \*', 'sink': function('InsertAddress')})<CR>
