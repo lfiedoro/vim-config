@@ -54,6 +54,9 @@ Plug 'mesonbuild/meson', { 'rtp': 'data/syntax-highlighting/vim' }
 
 Plug 'lambdalisue/suda.vim'
 
+nnoremap <C-p> :Files<CR>
+nnoremap gb :Buffers<CR>
+nnoremap gy :Tags<CR>
 Plug '$HOME/.fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -61,6 +64,3 @@ Plug 'rhysd/conflict-marker.vim'
 
 call plug#end()
 
-nnoremap <C-p> :Files<CR>
-nnoremap gb :Buffers<CR>
-nnoremap gy :Tags<CR>
