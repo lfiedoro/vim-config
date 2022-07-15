@@ -9,10 +9,6 @@ let g:local_vimrc = {'names':['.local.vim'],'hash_fun':'LVRHashOfFile'}
 
 let g:indentLine_char = '¦'
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
-let g:deoplete#sources#clang#clang_header = '/usr/lib64/clang'
-
 let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cpp']
 
@@ -60,13 +56,6 @@ Plug 'mesonbuild/meson', { 'rtp': 'data/syntax-highlighting/vim' }
 
 Plug 'lambdalisue/suda.vim'
 
-" deoplete
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-Plug 'zchee/deoplete-jedi'
-Plug 'zchee/deoplete-clang'
 Plug '$HOME/.fzf'
 Plug 'junegunn/fzf.vim'
 
