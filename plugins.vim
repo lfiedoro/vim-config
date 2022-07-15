@@ -9,8 +9,6 @@ let g:local_vimrc = {'names':['.local.vim'],'hash_fun':'LVRHashOfFile'}
 
 let g:indentLine_char = '¦'
 
-let g:gruvbox_color_column='faded_red'
-
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/lib64/clang'
