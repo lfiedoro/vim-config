@@ -18,8 +18,6 @@ let g:deoplete#sources#clang#clang_header = '/usr/lib64/clang'
 let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cpp']
 
-let g:ackprg = 'ag --vimgrep --smart-case'
-
 let g:editorconfig_verbose = 1
 let g:editorconfig_root_chdir = 1
 
@@ -27,8 +25,6 @@ set runtimepath+=~/.config/nvim/plugs/vim-plug/
 runtime plug.vim
 
 call plug#begin("~/.config/nvim/plugs")
-
-Plug 'mileszs/ack.vim'
 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
