@@ -14,52 +14,20 @@ nmap <leader>u :MundoToggle<CR>
 " show invisibles {{{1
 nmap <leader>l :set list!<CR>
 
-" toggle smart color column {{{1
+" toggle ordinary color column {{{1
+hi ColorColumn  ctermbg=Black
 let g:color_column_toggle = 0
-
-hi ColorColumn  ctermbg=red ctermfg=black
-
-function! ColorColumnWindowSet()
-  if !exists('w:color_column_toggle') | let w:color_column_toggle = 0 | en
-  if g:color_column_toggle
-    if !w:color_column_toggle
-      let w:color_column_toggle = matchadd('ColorColumn', '\M\%'.(&textwidth+1).'v\.\+', 100)
-    end
-  else
-    if w:color_column_toggle
-      call matchdelete(w:color_column_toggle)
-      let w:color_column_toggle = 0
-    end
-  end
-endfunc
-
 function! ColorColumnToggle()
   if g:color_column_toggle
+    set colorcolumn=
     let g:color_column_toggle = 0
   else
+    let &colorcolumn=join(range(81,999),",")
     let g:color_column_toggle = 1
   end
-
-  windo call ColorColumnWindowSet()
 endfunc
-
-au WinEnter * call ColorColumnWindowSet()
-
 nmap <silent> <leader>cc :call ColorColumnToggle()<CR>
 call ColorColumnToggle()
-
-" toggle ordinary color column {{{1
-let g:ordinary_color_column_toggle = 0
-function! OrdinaryColorColumnToggle()
-  if g:ordinary_color_column_toggle
-    set colorcolumn=
-    let g:ordinary_color_column_toggle = 0
-  else
-    set colorcolumn=+1
-    let g:ordinary_color_column_toggle = 1
-  end
-endfunc
-nmap <silent> <leader>CC :call OrdinaryColorColumnToggle()<CR>
 
 " change to directory of opened file {{{1
 nmap <leader>cd :lcd %:h<CR>
