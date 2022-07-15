@@ -144,6 +144,54 @@ function! s:TSplit(request)
 endfunction
 command! -nargs=* TSplit call s:TSplit(<q-args>)
 
+highlight ColorBGred ctermbg=red
+highlight ColorBGbrown ctermbg=brown
+highlight ColorBGwhite ctermbg=white
+highlight ColorBGyellow ctermbg=yellow
+highlight ColorBGmagenta ctermbg=magenta
+highlight ColorBGcyan ctermbg=cyan
+highlight ColorBGgreen ctermbg=green
+highlight ColorBGblue ctermbg=blue
+highlight ColorBGdarkgray ctermbg=darkgray
+highlight ColorBGgray ctermbg=gray
+highlight ColorBGdarkmagenta ctermbg=darkmagenta
+highlight ColorBGdarkmagenta ctermbg=darkmagenta
+highlight ColorBGdarkred ctermbg=darkred
+highlight ColorBGdarkcyan ctermbg=darkcyan
+highlight ColorBGdarkgreen ctermbg=darkgreen
+highlight ColorBGdarkblue ctermbg=darkblue
+highlight ColorBGblack ctermbg=black
+
+let g:colorbg_matches = []
+
+function s:ColorBgNames(A,L,P)
+  return "red\nbrown\nwhite\nyellow\nmagenta\ncyan\ngreen\nblue\ndarkgray\ngray\ndarkmagenta\ndarkmagenta\ndarkred\ndarkcyan\ndarkgreen\ndarkblue\nblack"
+endfunction
+
+function! s:ColorBG(color)
+  let pattern = getreg('/')
+  let match = matchadd('ColorBG'.a:color, pattern)
+  call add(g:colorbg_matches, match)
+endfunction
+command! -complete=custom,s:ColorBgNames -nargs=* ColorBG call s:ColorBG(<q-args>)
+
+function! s:ColorBGRemoveLast()
+  if len(g:colorbg_matches) > 0
+    let match = g:colorbg_matches[-1]
+    let g:colorbg_matches = g:colorbg_matches[:-2]
+    call matchdelete(match)
+  endif
+endfunction
+command! -nargs=0 ColorBGRemoveLast call s:ColorBGRemoveLast()
+
+function! s:ColorBGRemoveAll()
+  for match in g:colorbg_matches
+    call matchdelete(match)
+  endfor
+  let g:colorbg_matches = []
+endfunction
+command! -nargs=0 ColorBGRemoveAll call s:ColorBGRemoveAll()
+
 " <leader>j to switch between .h and .cpp {{{1
 function! SwitchCH(command, alt_ext)
   let extension=expand('%:e')
