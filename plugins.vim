@@ -1,20 +1,9 @@
 " Pre-plugin configuration
 
-let g:EasyMotion_leader_key = '<SPACE>'
-
 let g:no_rust_conceal="yes"
 let g:tex_conceal= ''
 
 let g:local_vimrc = {'names':['.local.vim'],'hash_fun':'LVRHashOfFile'}
-
-let g:indentLine_char = '¦'
-
-let g:markdown_syntax_conceal = 0
-let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cpp']
-
-let g:editorconfig_blacklist = {'filetype': ['git.*', 'fugitive']}
-let g:editorconfig_verbose = 1
-let g:editorconfig_root_chdir = 1
 
 set runtimepath+=~/.config/nvim/plugs/vim-plug/
 runtime plug.vim
@@ -26,6 +15,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+
+let g:markdown_syntax_conceal = 0
+let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cpp']
 Plug 'tpope/vim-markdown'
 
 Plug 'vim-ruby/vim-ruby'
@@ -37,15 +29,23 @@ Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/matchit.zip'
 Plug 'chreekat/vim-paren-crosshairs'
+
+let g:EasyMotion_leader_key = '<SPACE>'
 Plug 'Lokaltog/vim-easymotion'
+
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-underscore'
 
+let g:editorconfig_blacklist = {'filetype': ['git.*', 'fugitive']}
+let g:editorconfig_verbose = 1
+let g:editorconfig_root_chdir = 1
 Plug 'sgur/vim-editorconfig'
 
+let g:indentLine_char = '¦'
 Plug 'Yggdroot/indentLine'
+
 Plug 'ivyl/vim-bling'
 
 Plug 'altercation/vim-colors-solarized'
