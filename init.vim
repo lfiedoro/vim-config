@@ -58,6 +58,10 @@ set wildignore+=*.o
 " do not write swap files, what is lot is lost
 set nobackup nowritebackup noswapfile
 
+let git_dir = trim(system("git rev-parse --git-dir"))
+if v:shell_error == 0
+  let &tags .= ',' . git_dir . '/tags'
+endif
 set tags^=./.git/tags;
 
 runtime mappings.vim
