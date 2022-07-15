@@ -16,6 +16,7 @@ let g:deoplete#sources#clang#clang_header = '/usr/lib64/clang'
 let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cpp']
 
+let g:editorconfig_blacklist = {'filetype': ['git.*', 'fugitive']}
 let g:editorconfig_verbose = 1
 let g:editorconfig_root_chdir = 1
 
