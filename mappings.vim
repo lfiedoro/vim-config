@@ -64,16 +64,6 @@ noremap <silent> zp :<C-u>exe ":loadview ".v:count1<CR>
 " %% will expand to current dir in command mode {{{1
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 
-" writing to protected file using :Sw {{{1
-function! SudoWrite()
-  w suda://%
-  e!
-endfunction
-command! -nargs=0 Sw call SudoWrite()
-
-" :Swq {{{1
-command! -nargs=0 Swq call SudoWrite() | :q
-
 " Y to bahave more sanely
 nmap Y y$
 

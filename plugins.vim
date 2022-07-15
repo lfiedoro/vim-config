@@ -23,8 +23,6 @@ let g:ackprg = 'ag --vimgrep --smart-case'
 let g:editorconfig_verbose = 1
 let g:editorconfig_root_chdir = 1
 
-let g:suda#prefix = 'sudo://'
-
 set runtimepath+=~/.config/nvim/plugs/vim-plug/
 runtime plug.vim
 
