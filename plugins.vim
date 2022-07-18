@@ -64,6 +64,7 @@ Plug 'rhysd/conflict-marker.vim'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 call plug#end()
@@ -85,6 +86,8 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+  }, {
+    { name = 'nvim_lsp_signature_help' },
   }, {
     { name = 'buffer' },
   })
