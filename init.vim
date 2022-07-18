@@ -64,6 +64,8 @@ if v:shell_error == 0
 endif
 set tags^=./.git/tags;
 
+let g:tex_conceal= ''
+
 runtime mappings.vim
 runtime filetypes.vim
 

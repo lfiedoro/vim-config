@@ -1,11 +1,3 @@
-" Pre-plugin configuration
-
-let g:no_rust_conceal="yes"
-let g:tex_conceal= ''
-
-set runtimepath+=~/.config/nvim/plugs/vim-plug/
-runtime plug.vim
-
 call plug#begin("~/.config/nvim/plugs")
 
 Plug 'tpope/vim-unimpaired'
@@ -67,6 +59,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+
 call plug#end()
 
 lua <<EOF
