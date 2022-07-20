@@ -60,9 +60,14 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-orgmode/orgmode'
+
 call plug#end()
 
 lua <<EOF
+-- nvim-cmp && nvim-lspconfig
+
 local cmp = require'cmp'
 
 cmp.setup({
@@ -81,6 +86,8 @@ cmp.setup({
     { name = 'nvim_lsp' },
   }, {
     { name = 'nvim_lsp_signature_help' },
+  }, {
+    { name = 'orgmode' },
   }, {
     { name = 'buffer' },
   })
@@ -122,4 +129,22 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+
+-- orgmode
+
+require('orgmode').setup_ts_grammar()
+
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = {'org'},
+  },
+  ensure_installed = {'org'},
+}
+
+require('orgmode').setup({
+  org_agenda_files = {'~/sync/org/*'},
+  org_default_notes_file = '~/sync/org/refile.org',
+})
 EOF
