@@ -14,7 +14,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'derekwyatt/vim-scala'
 
 Plug 'adinapoli/vim-markmultiple'
-Plug 'godlygeek/tabular'
+Plug 'dhruvasagar/vim-table-mode'
 
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/matchit.zip'
