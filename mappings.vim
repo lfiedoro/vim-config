@@ -143,8 +143,8 @@ endfunction
 command! -nargs=0 ColorBGRemoveLast call s:ColorBGRemoveLast()
 
 function! s:ColorBGRemoveAll()
-  for match in g:colorbg_matches
-    call matchdelete(match)
+  for m in g:colorbg_matches
+    call matchdelete(m)
   endfor
   let g:colorbg_matches = []
 endfunction
