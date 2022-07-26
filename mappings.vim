@@ -1,5 +1,11 @@
 "" vim:ft=vim:fdm=marker
 
+" more easily get out of the terminal {{{1
+tnoremap <C-w><C-h> <C-\><C-N><C-w>h
+tnoremap <C-w><C-j> <C-\><C-N><C-w>j
+tnoremap <C-w><C-k> <C-\><C-N><C-w>k
+tnoremap <C-w><C-l> <C-\><C-N><C-w>l
+
 " turn off highlighting by hitting enter {{{1
 nmap <silent> <CR> :nohlsearch \| :call MarkMultipleClean()<CR>
 vmap <silent> <CR> :nohlsearch \| :call MarkMultipleClean()<CR>
