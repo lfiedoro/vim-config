@@ -33,7 +33,6 @@ function! ColorColumnToggle()
   end
 endfunc
 nmap <silent> <leader>cc :call ColorColumnToggle()<CR>
-call ColorColumnToggle()
 
 " change to directory of opened file {{{1
 nmap <leader>cd :lcd %:h<CR>
