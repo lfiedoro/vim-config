@@ -176,8 +176,6 @@ nmap <silent> <leader>h :call SwitchCH('e', 'c')<CR>
 " <leader>H to open complemetary .h / .c in new v split{{{1
 nmap <silent> <leader>H :call SwitchCH('vsp', 'c')<CR>
 
-" <leader>b opens tagbar that autoclose {{{1
-nmap <silent> <leader>b :TagbarOpenAutoClose<CR>
 
 " <leader>rb and <leader>so git signoffs {{{1
 nmap <leader>rb oReviewed-by: <C-r>=system("git config user.name")<CR><ESC>kJA <<C-r>=system("git config user.email")<CR>><ESC>kJx

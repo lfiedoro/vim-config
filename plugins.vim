@@ -16,7 +16,6 @@ Plug 'derekwyatt/vim-scala'
 Plug 'adinapoli/vim-markmultiple'
 Plug 'dhruvasagar/vim-table-mode'
 
-Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/matchit.zip'
 Plug 'chreekat/vim-paren-crosshairs'
 
