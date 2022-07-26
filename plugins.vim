@@ -61,7 +61,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-orgmode/orgmode'
 
 call plug#end()
@@ -136,21 +136,27 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-
 -- orgmode
 
 require('orgmode').setup_ts_grammar()
 
+require('orgmode').setup({
+  org_agenda_files = {'~/sync/org/*'},
+  org_default_notes_file = '~/sync/org/refile.org',
+  org_todo_keywords = {'TODO', 'WIP', '|', 'DONE'}
+})
+
+-- treesitter
+
 require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",
+  sync_install = false,
+  auto_install = true,
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = {'org'},
   },
-  ensure_installed = {'org'},
+  incremental_selection = { enable = true },
 }
 
-require('orgmode').setup({
-  org_agenda_files = {'~/sync/org/*'},
-  org_default_notes_file = '~/sync/org/refile.org',
-})
 EOF
