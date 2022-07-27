@@ -116,10 +116,30 @@ nmap <leader>ack oAcked-by: <C-r>=system("git config user.name")<CR><ESC>kJA <<C
 " <leader>ss for email signature {{{1
 nmap <leader>ss o<CR>-- <CR>Cheers,<CR>Arek<ESC>
 
-" <leader>ab access addrbook {{{1
-function! InsertAddress(line)
-  call append(line('.'), a:line)
-  normal! J
-endfunction
+" \ab for address book {{{1
+lua << EOF
+local pickers = require "telescope.pickers"
+local finders = require "telescope.finders"
+local conf = require("telescope.config").values
 
-nmap <leader>ab :call fzf#run({'source': 'notmuch address \*', 'sink': function('InsertAddress')})<CR>
+local actions = require "telescope.actions"
+local action_state = require "telescope.actions.state"
+
+local addrbook_picker = function()
+  pickers.new({}, {
+    prompt_title = "email address",
+    finder = finders.new_oneshot_job({ "notmuch", "address", "*" }, opts),
+    sorter = conf.generic_sorter(opts),
+    attach_mappings = function(prompt_bufnr, map)
+      actions.select_default:replace(function()
+        actions.close(prompt_bufnr)
+        local selection = action_state.get_selected_entry()
+        vim.api.nvim_put({ selection[1] }, "", false, true)
+      end)
+      return true
+    end
+  }):find()
+end
+
+vim.keymap.set('n', '<leader>ab', addrbook_picker)
+EOF
