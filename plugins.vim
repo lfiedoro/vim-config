@@ -5,10 +5,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
-let g:markdown_syntax_conceal = 0
-let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cpp']
-Plug 'tpope/vim-markdown'
-
 Plug 'numToStr/Comment.nvim'
 
 Plug 'vim-ruby/vim-ruby'
