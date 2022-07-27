@@ -32,8 +32,8 @@ let g:editorconfig_verbose = 1
 let g:editorconfig_root_chdir = 1
 Plug 'sgur/vim-editorconfig'
 
-let g:indentLine_char = '¦'
-Plug 'Yggdroot/indentLine'
+let g:indent_blankline_char = '¦'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'ivyl/vim-bling'
 

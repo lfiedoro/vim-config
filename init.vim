@@ -64,8 +64,6 @@ if v:shell_error == 0
 endif
 set tags^=./.git/tags;
 
-let g:tex_conceal= ''
-
 runtime mappings.vim
 runtime filetypes.vim
 
@@ -82,10 +80,6 @@ if has("autocmd")
 
   " set relativenumber by default everywhere
   au BufRead * set relativenumber
-  au BufRead * set concealcursor=c
-
-  " never conceal
-  au WinEnter * set conceallevel=0
 
   " tailing white space highlight
   au WinEnter * match ColorColumn /\M\s\+$/
