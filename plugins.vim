@@ -10,7 +10,6 @@ Plug 'numToStr/Comment.nvim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'derekwyatt/vim-scala'
 
-Plug 'adinapoli/vim-markmultiple'
 Plug 'dhruvasagar/vim-table-mode'
 
 Plug 'vim-scripts/matchit.zip'

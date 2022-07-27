@@ -7,8 +7,8 @@ tnoremap <C-w><C-k> <C-\><C-N><C-w>k
 tnoremap <C-w><C-l> <C-\><C-N><C-w>l
 
 " turn off highlighting by hitting enter {{{1
-nmap <silent> <CR> :nohlsearch \| :call MarkMultipleClean()<CR>
-vmap <silent> <CR> :nohlsearch \| :call MarkMultipleClean()<CR>
+nmap <silent> <CR> <cmd>nohlsearch<CR>
+vmap <silent> <CR> <cmd>nohlsearch<CR>
 
 
 " spell checking {{{1
