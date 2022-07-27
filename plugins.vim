@@ -16,8 +16,9 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'vim-scripts/matchit.zip'
 Plug 'chreekat/vim-paren-crosshairs'
 
-let g:EasyMotion_leader_key = '<SPACE>'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'phaazon/hop.nvim'
+nmap <space>w <cmd>HopWord<CR>
+nmap <space>j <cmd>HopLine<CR>
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
@@ -157,4 +158,5 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require'Comment'.setup()
+require'hop'.setup()
 EOF
