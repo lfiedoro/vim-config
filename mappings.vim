@@ -116,6 +116,9 @@ nmap <leader>ack oAcked-by: <C-r>=system("git config user.name")<CR><ESC>kJA <<C
 " <leader>ss for email signature {{{1
 nmap <leader>ss o<CR>-- <CR>Cheers,<CR>Arek<ESC>
 
+" redefine g] to use partial matches {{{1
+nmap g] :ts /<C-R><C-W><CR>
+
 " \ab for address book {{{1
 lua << EOF
 local pickers = require "telescope.pickers"
