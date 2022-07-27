@@ -62,9 +62,24 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-orgmode/orgmode'
 
+Plug 'nvim-lualine/lualine.nvim'
+
 call plug#end()
 
 lua <<EOF
+
+require('lualine').setup {
+  options = {
+    icons_enabled = false,
+    theme = '16color',
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '', right = ''},
+  },
+  sections = {
+    lualine_x = {},
+  },
+}
+
 -- nvim-cmp && nvim-lspconfig
 
 local cmp = require'cmp'
