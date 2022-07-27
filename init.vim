@@ -83,4 +83,6 @@ if has("autocmd")
   au BufWritePost plugins.lua lua package.loaded['plugins'] = nil
   au BufWritePost plugins.lua lua require'plugins'
   au BufWritePost plugins.lua :PackerSync
+
+  au TextYankPost * silent! lua vim.highlight.on_yank()
 endif
