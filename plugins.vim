@@ -7,9 +7,6 @@ Plug 'tpope/vim-repeat'
 
 Plug 'numToStr/Comment.nvim'
 
-Plug 'vim-ruby/vim-ruby'
-Plug 'derekwyatt/vim-scala'
-
 Plug 'dhruvasagar/vim-table-mode'
 
 Plug 'vim-scripts/matchit.zip'
@@ -35,8 +32,6 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ivyl/vim-bling'
 
 Plug 'altercation/vim-colors-solarized'
-
-Plug 'mesonbuild/meson', { 'rtp': 'data/syntax-highlighting/vim' }
 
 Plug 'lambdalisue/suda.vim'
 
