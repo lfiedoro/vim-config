@@ -141,8 +141,6 @@ return require('packer').startup(function(use)
   -- orgmode
 
   use { 'nvim-orgmode/orgmode', config = function()
-    require'orgmode'.setup_ts_grammar()
-
     require'orgmode'.setup({
       org_agenda_files = {'~/sync/org/*'},
       org_default_notes_file = '~/sync/org/refile.org',
@@ -152,7 +150,10 @@ return require('packer').startup(function(use)
 
   -- treesitter
 
-  use { 'nvim-treesitter/nvim-treesitter', run = function() require'nvim-treesitter.install'.update({ with_sync = true }) end, config = function()
+  use { 'nvim-treesitter/nvim-treesitter', requires = { 'nvim-orgmode/orgmode' },
+  run = function() require'nvim-treesitter.install'.update({ with_sync = true }) end,
+  config = function()
+    require'orgmode'.setup_ts_grammar() -- this seems to be very peculiar about ordering
     require'nvim-treesitter.configs'.setup {
       ensure_installed = "all",
       sync_install = false,
