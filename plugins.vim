@@ -2,13 +2,14 @@ call plug#begin("~/.config/nvim/plugs")
 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
 let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'bash=sh', 'c', 'cpp']
 Plug 'tpope/vim-markdown'
+
+Plug 'numToStr/Comment.nvim'
 
 Plug 'vim-ruby/vim-ruby'
 Plug 'derekwyatt/vim-scala'
@@ -159,4 +160,5 @@ require'nvim-treesitter.configs'.setup {
   incremental_selection = { enable = true },
 }
 
+require'Comment'.setup()
 EOF
