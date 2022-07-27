@@ -119,6 +119,15 @@ nmap <leader>ss o<CR>-- <CR>Cheers,<CR>Arek<ESC>
 " redefine g] to use partial matches {{{1
 nmap g] :ts /<C-R><C-W><CR>
 
+" :PluginUpdate {{{1
+"
+function! s:PluginUpdate()
+  lua package.loaded['plugins'] = nil
+  lua require'plugins'
+  :PackerSync
+endfunction
+command! -nargs=0 PluginUpdate call s:PluginUpdate()
+
 " \ab for address book {{{1
 lua << EOF
 local pickers = require "telescope.pickers"
