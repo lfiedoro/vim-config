@@ -43,11 +43,14 @@ Plug 'mesonbuild/meson', { 'rtp': 'data/syntax-highlighting/vim' }
 
 Plug 'lambdalisue/suda.vim'
 
-nnoremap <C-p> :Files<CR>
-nnoremap gb :Buffers<CR>
-nnoremap gy :Tags<CR>
-Plug '$HOME/.fzf'
-Plug 'junegunn/fzf.vim'
+nnoremap <C-p> <cmd>Telescope find_files<CR>
+nnoremap <C-A-P> <cmd>lua require'telescope.builtin'.find_files{no_ignore = true}<CR>
+nnoremap <leader>b <cmd>Telescope buffers<CR>
+nnoremap <leader>ff <cmd>Telescope live_grep<CR>
+nnoremap <leader>fw <cmd>Telescope grep_string<CR>
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim',
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 Plug 'rhysd/conflict-marker.vim'
 
@@ -171,6 +174,19 @@ require'nvim-treesitter.configs'.setup {
   },
   incremental_selection = { enable = true },
 }
+
+require('telescope').setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
+  }
+}
+require('telescope').load_extension('fzf')
 
 require'Comment'.setup()
 require'hop'.setup()
