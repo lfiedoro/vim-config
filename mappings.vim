@@ -56,10 +56,10 @@ cnoremap <C-n> <Down>
 " %% will expand to current dir in command mode {{{1
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 
-" Y to bahave more sanely
+" Y to bahave more sanely {{{1
 nmap Y y$
 
-
+" :ColorBG {{{1
 highlight ColorBGred ctermbg=red
 highlight ColorBGbrown ctermbg=brown
 highlight ColorBGwhite ctermbg=white
