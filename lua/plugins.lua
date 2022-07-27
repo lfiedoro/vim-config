@@ -10,6 +10,8 @@ return require('packer').startup(function(use)
     vim.cmd('colorscheme solarized')
   end }
 
+  use 'ivyl/vim-bling'
+
   use 'chreekat/vim-paren-crosshairs'
 
   use 'dhruvasagar/vim-table-mode'
