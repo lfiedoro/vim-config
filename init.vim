@@ -1,8 +1,3 @@
-runtime plugins.vim
-
-set background=dark
-colorscheme solarized
-
 syntax on
 
 filetype indent on
@@ -84,4 +79,8 @@ if has("autocmd")
   " tailing white space highlight
   au WinEnter * match ColorColumn /\M\s\+$/
   match ColorColumn /\M\s\+$/
+
+  au BufWritePost plugins.lua lua package.loaded['plugins'] = nil
+  au BufWritePost plugins.lua lua require'plugins'
+  au BufWritePost plugins.lua :PackerSync
 endif

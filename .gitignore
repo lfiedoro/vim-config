@@ -4,6 +4,6 @@
 .swp
 doc/tags
 view/*
-plugs/*
+plugin/packer_compiled.lua
 shada/*
 spell/*
