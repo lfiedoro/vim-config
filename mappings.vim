@@ -14,9 +14,6 @@ vmap <silent> <CR> <cmd>nohlsearch<CR>
 " spell checking {{{1
 nmap <silent> <leader>s :set spell!<CR>
 
-" Gundo - visualizing redo/undo changes {{{1
-nmap <leader>u :MundoToggle<CR>
-
 " show invisibles {{{1
 nmap <leader>l :set list!<CR>
 

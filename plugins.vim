@@ -36,8 +36,6 @@ Plug 'ivyl/vim-bling'
 
 Plug 'altercation/vim-colors-solarized'
 
-Plug 'simnalamburt/vim-mundo'
-
 Plug 'mesonbuild/meson', { 'rtp': 'data/syntax-highlighting/vim' }
 
 Plug 'lambdalisue/suda.vim'
