@@ -1,3 +1,4 @@
+colorscheme solarized
 syntax on
 
 filetype indent on

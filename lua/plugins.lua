@@ -6,10 +6,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-  use { 'altercation/vim-colors-solarized', config = function()
-    vim.cmd('colorscheme solarized')
-  end }
-
   use 'ivyl/vim-bling'
 
   use 'chreekat/vim-paren-crosshairs'
