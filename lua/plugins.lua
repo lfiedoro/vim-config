@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
     vim.keymap.set('n', '<C-p>', builtin.find_files, {noremap=true})
     vim.keymap.set('n', '<C-A-P>', function() builtin.find_files{no_ignore = true} end, {noremap=true})
     vim.keymap.set('n', '<leader>b', builtin.buffers, {noremap=true})
-    vim.keymap.set('n', '<leader>ff', builtin.live_grep, {noremap=true})
+    vim.keymap.set('n', '<leader>fg', builtin.live_grep, {noremap=true})
     vim.keymap.set('n', '<leader>fw', builtin.grep_string, {noremap=true})
 
     require'telescope'.setup { extensions =
