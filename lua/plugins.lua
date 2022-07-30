@@ -132,7 +132,7 @@ return require('packer').startup(function(use)
       lspconfig[lsp].setup{
         on_attach = on_attach,
         capabilities = capabilities,
-				settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
+        settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
       }
     end
   end }
