@@ -18,6 +18,7 @@ if has("autocmd")
   au FileType eruby            setl ai ts=4 sw=4 sts=4   expandtab
   au FileType javascript       setl ai ts=4 sw=4 sts=4   expandtab
   au FileType coffee           setl ai ts=2 sw=2 sts=2   expandtab
+  au FileType lua              setl ai ts=2 sw=2 sts=2   expandtab
   au FileType tex,plaintex     setl ai ts=2 sw=2 sts=2 noexpandtab fo+=t
 
   au FileType markdown         setl tw=77 fo+=t
