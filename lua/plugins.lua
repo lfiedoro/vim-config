@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
 
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
@@ -89,6 +90,7 @@ return require('packer').startup(function(use)
         { { name = 'nvim_lsp' }, },
         { { name = 'nvim_lsp_signature_help' }, },
         { { name = 'orgmode' }, },
+        { { name = 'nvim-lua' }, },
         { { name = 'buffer' }, })
     })
   end }
