@@ -165,17 +165,62 @@ return require('packer').startup(function(use)
     }
   end }
 
-  -- lualine
+  use 'nvim-treesitter/playground'
 
-  use { 'nvim-lualine/lualine.nvim', config = function()
-    require'lualine'.setup {
-      options = {
-        icons_enabled = false,
-        theme = '16color',
-        component_separators = { left = '|', right = '|'},
-        section_separators = { left = '', right = ''},
+  -- mini.statusline
+
+  use { 'echasnovski/mini.nvim', config = function()
+    local MiniStatusline = require('mini.statusline')
+    local active_content = function()
+      local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 90 })
+      local filename      = MiniStatusline.section_filename({ trunc_width = 999 })
+      local git = {}
+      local diagnostics = {}
+
+      if vim.b.gitsigns_status_dict then
+        git.head = ' ' .. vim.b.gitsigns_status_dict.head
+        for _, op in ipairs({ { 'added', '+' }, { 'removed', '-' }, { 'changed', '~' } }) do
+          local value = vim.b.gitsigns_status_dict[op[1]]
+          if value and value > 0 then
+            git[op[1]] = op[2] .. tostring(value)
+          end
+        end
+      end
+
+      local diag_severities = {
+        {'E', vim.diagnostic.severity.ERROR},
+        {'W', vim.diagnostic.severity.WARN},
+        {'I', vim.diagnostic.severity.INFO},
+        {'H', vim.diagnostic.severity.HINT},
+      }
+
+      for _, diag in ipairs(diag_severities) do
+        local count = #vim.diagnostic.get(0, {severity = diag[2]})
+        if count > 0 then
+          diagnostics[diag[1]] = diag[1] .. ':' .. tostring(count)
+        end
+      end
+
+      return MiniStatusline.combine_groups({
+        { hl = mode_hl,                          strings = { mode } },
+        { hl = 'MiniStatuslineGitHead',          strings = { git.head } },
+        { hl = 'MiniStatuslineGitAdded',         strings = { git.added } },
+        { hl = 'MiniStatuslineGitRemoved',       strings = { git.removed } },
+        { hl = 'MiniStatuslineGitChanged',       strings = { git.changed } },
+        { hl = 'MiniStatuslineDiagnosticsError', strings = { diagnostics.E } },
+        { hl = 'MiniStatuslineDiagnosticsWarn',  strings = { diagnostics.W } },
+        { hl = 'MiniStatuslineDiagnosticsInfo',  strings = { diagnostics.I } },
+        { hl = 'MiniStatuslineDiagnosticsHint',  strings = { diagnostics.H } },
+        '%<', '%=',
+        { hl = 'MiniStatuslineFilename',         strings = { filename } },
+      })
+    end
+    MiniStatusline.setup {
+      content = {
+        active = active_content,
+        inactive = nil,
       },
-      sections = { lualine_x = {} },
+      use_icons = false,
     }
   end }
 
