@@ -43,6 +43,10 @@ return require('packer').startup(function(use)
   vim.g.editorconfig_root_chdir = 1
   use 'sgur/vim-editorconfig'
 
+  use { 'lewis6991/gitsigns.nvim', config = function()
+    require('gitsigns').setup()
+  end }
+
   use { 'lukas-reineke/indent-blankline.nvim', config = function()
     require'indent_blankline'.setup { char = '¦', use_treesitter = true, show_first_indent_level = false }
   end }
