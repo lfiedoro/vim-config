@@ -11,6 +11,10 @@ set nomodeline " "security"
 set listchars=tab:▸\ ,eol:¬
 
 set number relativenumber
+augroup InitFile
+  au WinEnter * set relativenumber
+augroup END
+
 set cursorline
 set scrolloff=8
 set shortmess+=I
@@ -65,9 +69,6 @@ augroup InitFile
 
   " jump to last know position in the file
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-  " set relativenumber by default everywhere
-  au BufRead * set relativenumber
 
   au BufWinEnter * call s:SetGitTags()
 
