@@ -44,9 +44,6 @@ set matchpairs+=<:>
 " do not write swap files, what is lot is lost
 set nobackup nowritebackup noswapfile
 
-runtime mappings.vim
-runtime filetypes.vim
-
 augroup InitFile
   " resize splits to equal size when resizing window
   au VimResized * :wincmd =
@@ -80,3 +77,6 @@ augroup InitFile
 
   au TextYankPost * silent! lua vim.highlight.on_yank({ on_visual = false })
 augroup END
+
+runtime mappings.vim
+runtime filetypes.vim
