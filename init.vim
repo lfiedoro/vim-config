@@ -64,10 +64,6 @@ runtime mappings.vim
 runtime filetypes.vim
 
 if has("autocmd")
-  " enter will work in command edit mode as intended, since by default it's
-  " mapped to :nohl
-  au CmdwinEnter * noremap <buffer><CR> <CR>
-
   " resize splits to equal size when resizing window
   au VimResized * :wincmd =
 

@@ -9,6 +9,10 @@ tnoremap <C-w><C-l> <C-\><C-N><C-w>l
 " turn off highlighting by hitting enter {{{1
 nmap <silent> <CR> <cmd>nohlsearch<CR>
 vmap <silent> <CR> <cmd>nohlsearch<CR>
+augroup MappingNohl
+  au!
+  au CmdwinEnter * noremap <buffer><CR> <CR>
+augroup END
 
 " spell checking {{{1
 nmap <silent> <leader>s :set spell!<CR>
