@@ -18,7 +18,6 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-fugitive'
-  use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
 
   use { 'numToStr/Comment.nvim', config = function() require'Comment'.setup() end }
@@ -171,6 +170,29 @@ return require('packer').startup(function(use)
 
   use { 'echasnovski/mini.nvim', config = function()
     require('mini.trailspace').setup()
+
+    require('mini.surround').setup {
+      custom_surroundings = {
+        ['('] = { output = { left = '( ', right = ' )' } },
+        ['['] = { output = { left = '[ ', right = ' ]' } },
+        ['{'] = { output = { left = '{ ', right = ' }' } },
+        ['<'] = { output = { left = '< ', right = ' >' } },
+      },
+      mappings = {
+        add = 'ys',
+        delete = 'ds',
+        find = '',
+        find_left = '',
+        highlight = '',
+        replace = 'cs',
+        update_n_lines = '',
+      },
+      search_method = 'cover_or_next',
+    }
+
+    -- Remap adding surrounding to Visual mode selection
+    vim.api.nvim_del_keymap('x', 'ys')
+    vim.api.nvim_set_keymap('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { noremap = true })
 
     local MiniStatusline = require('mini.statusline')
     local active_content = function()
