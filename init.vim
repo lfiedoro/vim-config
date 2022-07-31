@@ -58,15 +58,17 @@ runtime mappings.vim
 runtime filetypes.vim
 
 function! s:SetGitTags()
-  let scope = get(v:event, "scope", "global")
-  let git_dir = trim(system("git rev-parse --git-dir"))
+  let file_dir = expand('%:h')
+  let infix = ""
+
+  if file_dir != ""
+    let infix="-C " .. file_dir
+  endif
+
+  let git_dir = trim(system("git " .. infix .. " rev-parse --git-dir"))
 
   if v:shell_error == 0
-    if scope == "global"
-      let &tags = './tags;,tags,' . git_dir . '/tags'
-    else
       let &l:tags = './tags;,tags,' . git_dir . '/tags'
-    endif
   endif
 endfunction
 call s:SetGitTags()
@@ -82,7 +84,7 @@ augroup InitFile
   " set relativenumber by default everywhere
   au BufRead * set relativenumber
 
-  au DirChanged * call s:SetGitTags()
+  au BufWinEnter * call s:SetGitTags()
 
   au BufWritePost plugins.lua lua package.loaded['plugins'] = nil
   au BufWritePost plugins.lua lua require'plugins'
