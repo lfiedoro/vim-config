@@ -167,9 +167,11 @@ return require('packer').startup(function(use)
 
   use 'nvim-treesitter/playground'
 
-  -- mini.statusline
+  -- mini.trailspace && mini.statusline
 
   use { 'echasnovski/mini.nvim', config = function()
+    require('mini.trailspace').setup()
+
     local MiniStatusline = require('mini.statusline')
     local active_content = function()
       local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 90 })

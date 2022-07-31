@@ -159,6 +159,8 @@ local c = {
   MiniStatuslineLocation     = { fg = base1, bg = base02 },
   MiniStatuslineInactive     = { fg = base1, bg = base02 },
 
+  -- mini.trailspace
+  MiniTrailspace = "ErrorMsg"
 }
 
 if vim.g.colors_name then

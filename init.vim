@@ -77,10 +77,6 @@ if has("autocmd")
   " set relativenumber by default everywhere
   au BufRead * set relativenumber
 
-  " tailing white space highlight
-  au WinEnter * match ColorColumn /\M\s\+$/
-  match ColorColumn /\M\s\+$/
-
   au BufWritePost plugins.lua lua package.loaded['plugins'] = nil
   au BufWritePost plugins.lua lua require'plugins'
   au BufWritePost plugins.lua :PackerSync
