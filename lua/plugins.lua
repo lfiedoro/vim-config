@@ -174,13 +174,13 @@ return require('packer').startup(function(use)
 
     local MiniStatusline = require('mini.statusline')
     local active_content = function()
-      local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 90 })
-      local filename      = MiniStatusline.section_filename({ trunc_width = 999 })
+      local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 50 })
+      local filename      = MiniStatusline.section_filename({ trunc_width = 999 }) -- always truncate
       local git = {}
       local diagnostics = {}
 
       if vim.b.gitsigns_status_dict then
-        git.head = ' ' .. vim.b.gitsigns_status_dict.head
+        git.head = '  ' .. vim.b.gitsigns_status_dict.head
         for _, op in ipairs({ { 'added', '+' }, { 'removed', '-' }, { 'changed', '~' } }) do
           local value = vim.b.gitsigns_status_dict[op[1]]
           if value and value > 0 then

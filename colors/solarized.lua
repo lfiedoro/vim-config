@@ -145,10 +145,10 @@ local c = {
   MiniStatuslineModeCommand = { fg = base2, bg = yellow },
   MiniStatuslineModeOther   = { fg = base2, bg = violet },
 
-  MiniStatuslineGitHead      = { fg = blue, bg = base02 },
-  MiniStatuslineGitAdded     = { fg = green, bg = base02 },
-  MiniStatuslineGitRemoved   = { fg = red, bg = base02 },
-  MiniStatuslineGitChanged   = { fg = yellow, bg = base02 },
+  MiniStatuslineGitHead      = { fg = blue,   bg = base03 },
+  MiniStatuslineGitAdded     = { fg = green,  bg = base03 },
+  MiniStatuslineGitRemoved   = { fg = red,    bg = base03 },
+  MiniStatuslineGitChanged   = { fg = yellow, bg = base03 },
 
   MiniStatuslineDiagnosticsError = { fg = red, bg = base02 },
   MiniStatuslineDiagnosticsWarn  = { fg = yellow, bg = base02 },
