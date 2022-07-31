@@ -112,11 +112,11 @@ local c = {
   -- telescope
   TelescopeSelection      = { fg = base3, bg = magenta, {bold} },
   TelescopeMultiSelection = { fg = base3, bg = violet },
-  TelescopeBorder         = { fg = base00 },
+  TelescopeBorder         = { fg = magenta },
   TelescopeSelectionCaret = { fg = magenta },
   TelescopePromptPrefix   = { fg = magenta },
-  TelescopeMatching       = { fg = blue },
-  TelescopeTitle          = { fg = base2 },
+  TelescopeMatching       = { fg = base1 },
+  TelescopeTitle          = { fg = base2, {bold} },
 
   -- nvim-cmp
   CmpItemAbbr           = { fg = none },
