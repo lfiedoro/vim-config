@@ -1,8 +1,5 @@
 colorscheme solarized
-syntax on
 
-filetype indent on
-filetype plugin on
 
 set nomodeline " "security"
 
@@ -10,12 +7,9 @@ set listchars=tab:▸\ ,eol:¬
 
 set number relativenumber
 set cursorline
-set ruler
 set scrolloff=8
 set shortmess+=I
-set showcmd
 set visualbell
-set showfulltag
 set splitbelow splitright
 
 set lazyredraw
@@ -37,19 +31,6 @@ set ignorecase smartcase
 set showmatch matchtime=3 " matching bracket
 set matchpairs+=<:>
 
-set smartindent
-
-set formatoptions-=t " no automatic text wrapping
-set textwidth=80
-set nojoinspaces " only one space when joining
-set nowrap linebreak
-
-" preview :s
-set inccommand=nosplit
-
-" easier tabbing through alternative in command mode
-set wildignore+=*.pyc
-set wildignore+=*.o
 
 " do not write swap files, what is lot is lost
 set nobackup nowritebackup noswapfile
