@@ -69,7 +69,7 @@ augroup InitFile
   au VimResized * :wincmd =
 
   " jump to last know position in the file
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  au BufReadPost * exe "silent! normal! g`\""
 
   " use tags file from the git dir
   function! s:SetGitTags()
