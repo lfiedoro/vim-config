@@ -50,8 +50,8 @@ local c = {
   Directory = { fg = blue },
   ErrorMsg  = { fg = red, { reverse } },
 
-  Search    = { fg = yellow, { standout } },
-  IncSearch = { fg = orange, { standout } },
+  Search    = { fg = yellow,  { standout } },
+  IncSearch = { fg = magenta, { standout } },
 
   MoreMsg = { fg = blue },
   ModeMsg = { fg = blue },
