@@ -63,7 +63,8 @@ set tags^=./.git/tags;
 runtime mappings.vim
 runtime filetypes.vim
 
-if has("autocmd")
+augroup InitFile
+  au!
   " resize splits to equal size when resizing window
   au VimResized * :wincmd =
 
@@ -78,4 +79,4 @@ if has("autocmd")
   au BufWritePost plugins.lua :PackerSync
 
   au TextYankPost * silent! lua vim.highlight.on_yank({ on_visual = false })
-endif
+augroup END
