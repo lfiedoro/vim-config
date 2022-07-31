@@ -1,3 +1,8 @@
+" clear our autocmd group
+augroup InitFile
+  au!
+augroup END
+
 colorscheme solarized
 
 
@@ -55,7 +60,6 @@ endfunction
 call s:SetGitTags()
 
 augroup InitFile
-  au!
   " resize splits to equal size when resizing window
   au VimResized * :wincmd =
 
