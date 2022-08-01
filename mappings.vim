@@ -21,18 +21,21 @@ nmap <silent> <leader>s :set spell!<CR>
 nmap <leader>l :set list!<CR>
 
 " toggle ordinary color column {{{1
-hi ColorColumn  ctermbg=Black
-let g:color_column_toggle = 0
-function! ColorColumnToggle()
-  if g:color_column_toggle
-    set colorcolumn=
-    let g:color_column_toggle = 0
+lua << EOF
+local function toggle_color_column()
+  if vim.wo.colorcolumn ~= "" then
+    vim.wo.colorcolumn = ""
   else
-    let &colorcolumn=join(range(81,999),",")
-    let g:color_column_toggle = 1
+    local cc = {}
+    for i = 81,999 do
+      table.insert(cc, i)
+    end
+
+    vim.wo.colorcolumn = table.concat(cc, ",")
   end
-endfunc
-nmap <silent> <leader>cc :call ColorColumnToggle()<CR>
+end
+vim.keymap.set("n", "<leader>cc", toggle_color_column)
+EOF
 
 " change to directory of opened file {{{1
 nmap <leader>cd :lcd %:h<CR>
