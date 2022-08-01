@@ -2,6 +2,9 @@ local au_group = vim.api.nvim_create_augroup("init.lua", { clear = true })
 
 vim.cmd [[colorscheme solarized]]
 
+-- use space as a leader
+vim.g.mapleader = " "
+
 -- show relative numbers in each window
 vim.o.number          = true
 vim.wo.relativenumber = true

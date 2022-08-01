@@ -132,7 +132,7 @@ function! s:PluginUpdate()
 endfunction
 command! -nargs=0 PluginUpdate call s:PluginUpdate()
 
-" \ab for address book {{{1
+" <leader>ab for address book {{{1
 lua << EOF
 local pickers = require "telescope.pickers"
 local finders = require "telescope.finders"
