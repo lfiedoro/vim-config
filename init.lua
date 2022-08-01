@@ -5,12 +5,17 @@ vim.cmd [[colorscheme solarized]]
 -- use space as a leader
 vim.g.mapleader = " "
 
--- show relative numbers in each window
+-- show relative line numbers in each window
+-- and use number column for signs
 vim.o.number          = true
 vim.wo.relativenumber = true
+vim.wo.signcolumn     = 'number'
 vim.api.nvim_create_autocmd("WinEnter", {
   group    = au_group,
-  callback = function() vim.wo.relativenumber = true end
+  callback = function()
+    vim.wo.relativenumber = true
+    vim.wo.signcolumn     = 'number'
+  end
 })
 
 -- for extra safety don't execute modlines
