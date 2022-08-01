@@ -242,6 +242,11 @@ return require('packer').startup(function(use)
     }
   end }
 
+  -- lua docs via :help
+  use 'milisims/nvim-luaref'
+  use 'nanotee/luv-vimdocs'
+
+  -- self-manage
   use 'wbthomason/packer.nvim'
 
   if packer_bootstrap then
