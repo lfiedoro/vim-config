@@ -26,13 +26,6 @@ return require('packer').startup(function(use)
   use { 'kana/vim-textobj-entire', requires = {'kana/vim-textobj-user'}}
   use { 'kana/vim-textobj-underscore', requires = {'kana/vim-textobj-user'}}
 
-  use { 'phaazon/hop.nvim', config = function()
-    local hop = require 'hop'
-    hop.setup()
-    vim.keymap.set('n', '<space>w', hop.hint_words)
-    vim.keymap.set('n', '<space>j', hop.hint_lines)
-  end }
-
   vim.g.editorconfig_blacklist = { filetype = { 'git.*', 'fugitive' } }
   vim.g.editorconfig_verbose = 1
   vim.g.editorconfig_root_chdir = 1

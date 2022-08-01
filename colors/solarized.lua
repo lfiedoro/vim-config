@@ -125,12 +125,6 @@ local c = {
   CmpItemAbbrMatch      = { fg = cyan },
   CmpItemAbbrMatchFuzzy = "CmpItemAbbrMatch",
 
-  -- hop
-  HopNextKey   = { fg = magenta, { bold } },
-  HopNextKey1  = { fg = magenta, { bold } },
-  HopNextKey2  = { fg = violet,  { bold } },
-  HopUnmatched = { fg = base01 },
-
   -- LSP
   DiagnosticError = { fg = red,    { bold } },
   DiagnosticWarn  = { fg = yellow, { bold } },
