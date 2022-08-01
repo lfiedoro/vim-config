@@ -136,13 +136,14 @@ nmap <leader>ss o<CR>-- <CR>Cheers,<CR>Arek<ESC>
 nmap g] :ts /<C-R><C-W><CR>
 
 " :PluginUpdate {{{1
-"
-function! s:PluginUpdate()
-  lua package.loaded['plugins'] = nil
-  lua require'plugins'
-  :PackerSync
-endfunction
-command! -nargs=0 PluginUpdate call s:PluginUpdate()
+lua << EOF
+local function do_plugin_update()
+  package.loaded['plugins'] = nil
+  require'plugins'.sync()
+end
+
+vim.api.nvim_create_user_command('PluginUpdate', do_plugin_update, { force = true })
+EOF
 
 " <leader>ab for address book {{{1
 lua << EOF
