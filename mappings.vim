@@ -113,9 +113,21 @@ endfunction
 command! -nargs=0 ColorBGRemoveAll call s:ColorBGRemoveAll()
 
 " <leader>rb and <leader>so git signoffs {{{1
-nmap <leader>rb oReviewed-by: <C-r>=system("git config user.name")<CR><ESC>kJA <<C-r>=system("git config user.email")<CR>><ESC>kJx
-nmap <leader>so oSigned-off-by: <C-r>=system("git config user.name")<CR><ESC>kJA <<C-r>=system("git config user.email")<CR>><ESC>kJx
-nmap <leader>ack oAcked-by: <C-r>=system("git config user.name")<CR><ESC>kJA <<C-r>=system("git config user.email")<CR>><ESC>kJx
+lua << EOF
+local function insert_commit_tag(tag)
+  local user_name  = vim.fn.trim(vim.fn.system("git config user.name"))
+  local user_email = vim.fn.trim(vim.fn.system("git config user.email"))
+
+  local line = vim.api.nvim_win_get_cursor(0)[1]
+
+  local text = tag .. ": " .. user_name .. " <" .. user_email .. ">"
+  vim.api.nvim_buf_set_lines(0, line, line, false, {text})
+end
+
+vim.keymap.set("n", "<leader>rb", function() insert_commit_tag("Reviewed-by") end)
+vim.keymap.set("n", "<leader>so", function() insert_commit_tag("Signed-off-by") end)
+vim.keymap.set("n", "<leader>ack", function() insert_commit_tag("Acked-by") end)
+EOF
 
 " <leader>ss for email signature {{{1
 nmap <leader>ss o<CR>-- <CR>Cheers,<CR>Arek<ESC>
