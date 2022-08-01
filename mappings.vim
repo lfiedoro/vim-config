@@ -37,16 +37,6 @@ nmap <silent> <leader>cc :call ColorColumnToggle()<CR>
 " change to directory of opened file {{{1
 nmap <leader>cd :lcd %:h<CR>
 
-" toggle relative/normal line numbering {{{1
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
-endfunc
-nmap <silent> <leader>n :call NumberToggle()<CR>
-
 " Unimpaired text bubbling {{{1
 nmap <C-k> [e
 nmap <C-j> ]e
