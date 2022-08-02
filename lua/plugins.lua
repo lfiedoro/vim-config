@@ -92,11 +92,10 @@ return require('packer').startup(function(use)
 
   use { 'neovim/nvim-lspconfig', requires = {'hrsh7th/nvim-cmp'}, config = function()
     local opts = { noremap=true, silent=true }
-    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-    vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-
+    vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float, opts)
+    vim.keymap.set('n', '[d',         vim.diagnostic.goto_prev, opts)
+    vim.keymap.set('n', ']d',         vim.diagnostic.goto_next, opts)
+    vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
     local on_attach = function(_, bufnr)
 
       local bufopts = { noremap=true, silent=true, buffer=bufnr }
