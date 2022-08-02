@@ -176,7 +176,7 @@ return require('packer').startup(function(use)
   use { 'echasnovski/mini.nvim', config = function()
     vim.api.nvim_create_user_command("BD", function() require('mini.bufremove').delete(0, false) end, { force = true })
 
-    require('mini.trailspace').setup()
+    require('mini.trailspace').setup {}
 
     require('mini.surround').setup {
       custom_surroundings = {
