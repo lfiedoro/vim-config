@@ -96,23 +96,35 @@ return require('packer').startup(function(use)
     vim.keymap.set('n', '[d',         vim.diagnostic.goto_prev, opts)
     vim.keymap.set('n', ']d',         vim.diagnostic.goto_next, opts)
     vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
-    local on_attach = function(_, bufnr)
 
+    local on_attach = function(client, bufnr)
+      local caps = client.resolved_capabilities
       local bufopts = { noremap=true, silent=true, buffer=bufnr }
-      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-      vim.keymap.set('n', '<leader>k', vim.lsp.buf.signature_help, bufopts)
-      vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-      vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-      vim.keymap.set('n', '<leader>wl', function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      end, bufopts)
-      vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-      vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+
+      if caps.declaration then
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+      end
+      if caps.goto_definition then
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+      end
+      if caps.hover then
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+      end
+      if caps.implementation then
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+      end
+      if caps.signature_help then
+        vim.keymap.set('n', '<leader>k', vim.lsp.buf.signature_help, bufopts)
+      end
+
+      -- we don't have competing mappings for those below
+      vim.keymap.set('n', '<leader>wa',  vim.lsp.buf.add_workspace_folder, bufopts)
+      vim.keymap.set('n', '<leader>wr',  vim.lsp.buf.remove_workspace_folder, bufopts)
+      vim.keymap.set('n', '<leader>wl',  function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, bufopts)
+      vim.keymap.set('n', '<leader>D',   vim.lsp.buf.type_definition, bufopts)
+      vim.keymap.set('n', '<leader>rn',  vim.lsp.buf.rename, bufopts)
+      vim.keymap.set('n', '<leader>ca',  vim.lsp.buf.code_action, bufopts)
+      vim.keymap.set('n', 'gr',          vim.lsp.buf.references, bufopts)
       vim.keymap.set('n', '<leader>fmt', vim.lsp.buf.formatting, bufopts)
     end
 
