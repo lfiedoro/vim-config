@@ -171,9 +171,11 @@ return require('packer').startup(function(use)
 
   use 'nvim-treesitter/playground'
 
-  -- mini.trailspace && mini.statusline
+  -- mini.bufremove && mini.trailspace && mini.statusline
 
   use { 'echasnovski/mini.nvim', config = function()
+    vim.api.nvim_create_user_command("BD", function() require('mini.bufremove').delete(0, false) end, { force = true })
+
     require('mini.trailspace').setup()
 
     require('mini.surround').setup {
