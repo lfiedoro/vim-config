@@ -56,62 +56,6 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 " Y to bahave more sanely {{{1
 nmap Y y$
 
-" :ColorBG {{{1
-highlight ColorBGred ctermbg=red
-highlight ColorBGbrown ctermbg=brown
-highlight ColorBGwhite ctermbg=white
-highlight ColorBGyellow ctermbg=yellow
-highlight ColorBGmagenta ctermbg=magenta
-highlight ColorBGcyan ctermbg=cyan
-highlight ColorBGgreen ctermbg=green
-highlight ColorBGblue ctermbg=blue
-highlight ColorBGdarkgray ctermbg=darkgray
-highlight ColorBGgray ctermbg=gray
-highlight ColorBGdarkmagenta ctermbg=darkmagenta
-highlight ColorBGdarkmagenta ctermbg=darkmagenta
-highlight ColorBGdarkred ctermbg=darkred
-highlight ColorBGdarkcyan ctermbg=darkcyan
-highlight ColorBGdarkgreen ctermbg=darkgreen
-highlight ColorBGdarkblue ctermbg=darkblue
-highlight ColorBGblack ctermbg=black
-
-function s:ColorBGEnsureTable()
-  if !exists("w:colorbg_matches")
-    let w:colorbg_matches = []
-  endif
-endfunction
-
-function s:ColorBgNames(A,L,P)
-  return "red\nbrown\nwhite\nyellow\nmagenta\ncyan\ngreen\nblue\ndarkgray\ngray\ndarkmagenta\ndarkmagenta\ndarkred\ndarkcyan\ndarkgreen\ndarkblue\nblack"
-endfunction
-
-function! s:ColorBG(color)
-  call s:ColorBGEnsureTable()
-  let pattern = getreg('/')
-  let match = matchadd('ColorBG'.a:color, pattern)
-  call add(w:colorbg_matches, match)
-endfunction
-command! -complete=custom,s:ColorBgNames -nargs=* ColorBG call s:ColorBG(<q-args>)
-
-function! s:ColorBGRemoveLast()
-  call s:ColorBGEnsureTable()
-  if len(w:colorbg_matches) > 0
-    let match = w:colorbg_matches[-1]
-    let w:colorbg_matches = w:colorbg_matches[:-2]
-    call matchdelete(match)
-  endif
-endfunction
-command! -nargs=0 ColorBGRemoveLast call s:ColorBGRemoveLast()
-
-function! s:ColorBGRemoveAll()
-  call s:ColorBGEnsureTable()
-  for m in w:colorbg_matches
-    call matchdelete(m)
-  endfor
-  let w:colorbg_matches = []
-endfunction
-command! -nargs=0 ColorBGRemoveAll call s:ColorBGRemoveAll()
-
 " <leader>rb and <leader>so git signoffs {{{1
 lua << EOF
 local function insert_commit_tag(tag)
