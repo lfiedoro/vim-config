@@ -26,10 +26,11 @@ return require('packer').startup(function(use)
   use { 'kana/vim-textobj-entire', requires = {'kana/vim-textobj-user'}}
   use { 'kana/vim-textobj-underscore', requires = {'kana/vim-textobj-user'}}
 
-  vim.g.editorconfig_blacklist = { filetype = { 'git.*', 'fugitive' } }
-  vim.g.editorconfig_verbose = 1
-  vim.g.editorconfig_root_chdir = 1
-  use 'sgur/vim-editorconfig'
+  use { 'sgur/vim-editorconfig', config = function()
+    vim.g.editorconfig_blacklist = { filetype = { 'git.*', 'fugitive' } }
+    vim.g.editorconfig_verbose = 1
+    vim.g.editorconfig_root_chdir = 1
+  end }
 
   use { 'lewis6991/gitsigns.nvim', config = function()
     require('gitsigns').setup()
