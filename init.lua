@@ -128,5 +128,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function() vim.highlight.on_yank { on_visual = false } end
 })
 
+-- set the default indent parameters
+local function default_indent()
+  vim.bo.textwidth = 80
+  vim.bo.expandtab = true
+  vim.bo.sw = 0
+  vim.bo.sts = -1
+  vim.bo.ts = 4
+end
+vim.api.nvim_create_autocmd("BufAdd", {
+  group = au_group,
+  callback = default_indent,
+})
+default_indent()
+
 require 'ivyl.mappings'
-vim.cmd [[runtime filetypes.vim]]
