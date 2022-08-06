@@ -112,8 +112,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = au_group,
   pattern = "plugins.lua",
   callback = function()
-    package.loaded['plugins'] = nil
-    require 'plugins'.sync()
+    package.loaded['ivyl.plugins'] = nil
+    require 'ivyl.plugins'.sync()
   end
 })
 

@@ -84,8 +84,8 @@ vim.keymap.set("n", "]g", ":ts /<C-r><C-w><CR>")
 
 -- :PluginUpdate
 vim.api.nvim_create_user_command('PluginUpdate', function ()
-  package.loaded['plugins'] = nil
-  require'plugins'.sync()
+  package.loaded['ivyl.plugins'] = nil
+  require'ivyl.plugins'.sync()
 end, { force = true })
 
 -- <Leader>ab - address book
