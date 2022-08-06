@@ -55,11 +55,11 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim', config = function()
     local builtin = require 'telescope.builtin'
     local themes = require 'telescope.themes'
-    vim.keymap.set('n', '<C-p>', function() builtin.find_files(themes.get_dropdown{previewer = false}) end, {noremap=true})
-    vim.keymap.set('n', '<C-A-P>', function() builtin.find_files(themes.get_dropdown{no_ignore = true, previewer = false}) end, {noremap=true})
-    vim.keymap.set('n', '<leader>b', function() builtin.buffers(themes.get_dropdown{previewer=false}) end, {noremap=true})
-    vim.keymap.set('n', '<leader>fg', builtin.live_grep, {noremap=true})
-    vim.keymap.set('n', '<leader>fw', builtin.grep_string, {noremap=true})
+    vim.keymap.set('n', '<C-p>', function() builtin.find_files(themes.get_dropdown{previewer = false}) end)
+    vim.keymap.set('n', '<C-A-P>', function() builtin.find_files(themes.get_dropdown{no_ignore = true, previewer = false}) end)
+    vim.keymap.set('n', '<leader>b', function() builtin.buffers(themes.get_dropdown{previewer=false}) end)
+    vim.keymap.set('n', '<leader>fg', builtin.live_grep)
+    vim.keymap.set('n', '<leader>fw', builtin.grep_string)
 
     require'telescope'.setup { extensions =
       { fzf = { fuzzy = true, override_generic_sorter = true, override_file_sorter = true, case_mode = "smart_case", } }
@@ -101,7 +101,7 @@ return require('packer').startup(function(use)
   -- lspconfig
 
   use { 'neovim/nvim-lspconfig', requires = {'hrsh7th/nvim-cmp'}, config = function()
-    local opts = { noremap=true, silent=true }
+    local opts = { silent=true }
     vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', '[d',         vim.diagnostic.goto_prev, opts)
     vim.keymap.set('n', ']d',         vim.diagnostic.goto_next, opts)
@@ -109,7 +109,7 @@ return require('packer').startup(function(use)
 
     local on_attach = function(client, bufnr)
       local caps = client.resolved_capabilities
-      local bufopts = { noremap=true, silent=true, buffer=bufnr }
+      local bufopts = { silent=true, buffer=bufnr }
 
       if caps.declaration then
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
@@ -214,8 +214,8 @@ return require('packer').startup(function(use)
     }
 
     -- Remap adding surrounding to Visual mode selection
-    vim.api.nvim_del_keymap('x', 'ys')
-    vim.api.nvim_set_keymap('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { noremap = true })
+    vim.keymap.del('x', 'ys')
+    vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]])
 
     local MiniStatusline = require('mini.statusline')
     local active_content = function()
