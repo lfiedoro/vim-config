@@ -31,7 +31,7 @@ vim.o.cursorline = true
 vim.o.scrolloff = 8
 
 -- don't display the :intro
-vim.o.shortmess = vim.o.shortmess .. "I"
+vim.opt.shortmess:append("I")
 
 -- don't beep on me
 vim.o.visualbell = true
@@ -47,7 +47,7 @@ vim.o.lazyredraw = true
 vim.o.virtualedit = "block"
 
 -- when changing (normal c) put $ on word boundary and keep it visible
-vim.o.cpoptions = vim.o.cpoptions .. "$"
+vim.opt.cpoptions:append("$")
 
 -- allow switching between buffers without saving
 vim.o.hidden = true
@@ -65,7 +65,7 @@ vim.o.smartcase = true
 
 -- when inserting a bracket - flash the matching one
 vim.o.showmatch = true
-vim.o.matchpairs = vim.o.matchpairs .. ",<:>"
+vim.opt.matchpairs:append("<:>")
 
 -- don't wrap displayed text
 vim.o.wrap = false
