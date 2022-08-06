@@ -22,7 +22,12 @@ vim.api.nvim_create_autocmd("WinEnter", {
 vim.o.modeline = false
 
 -- how to display the invisible things with :list
-vim.o.listchars = "tab:▸ ,eol:¬"
+vim.o.listchars = "tab:▸ "
+vim.wo.list = true
+vim.api.nvim_create_autocmd("WinEnter", {
+  group    = au_group,
+  callback = function() vim.wo.list = true end
+})
 
 -- highlight the line with the cursor
 vim.o.cursorline = true
