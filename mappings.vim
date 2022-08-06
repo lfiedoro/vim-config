@@ -53,9 +53,6 @@ cnoremap <C-n> <Down>
 " %% will expand to current dir in command mode {{{1
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 
-" Y to bahave more sanely {{{1
-nmap Y y$
-
 " <leader>rb and <leader>so git signoffs {{{1
 lua << EOF
 local function insert_commit_tag(tag)
