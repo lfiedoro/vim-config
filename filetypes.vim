@@ -31,23 +31,4 @@ if has("autocmd")
   augroup filetypedetect
     au BufRead,BufNewFile *mutt-* setl filetype=mail tw=72 fo+=t
   augroup END
-
-    " Enable editing of gzipped files
-  augroup gzip
-    au!
-
-    au BufReadPre,FileReadPre     *.gz setl bin
-    au BufReadPost,FileReadPost   *.gz let ch_save = &ch|setl ch=2
-    au BufReadPost,FileReadPost   *.gz '[,']!gunzip
-    au BufReadPost,FileReadPost   *.gz setl nobin
-    au BufReadPost,FileReadPost   *.gz let &ch = ch_save|unlet ch_save
-    au BufReadPost,FileReadPost   *.gz execute ":doautocmd BufReadPost " . expand("%:r")
-    au BufWritePost,FileWritePost *.gz !mv <afile> <afile>:r
-    au BufWritePost,FileWritePost *.gz !gzip <afile>:r
-    au FileAppendPre              *.gz !gunzip <afile>
-    au FileAppendPre              *.gz !mv <afile>:r <afile>
-    au FileAppendPost             *.gz !mv <afile> <afile>:r
-    au FileAppendPost             *.gz !gzip <afile>:r
-  augroup END
-
 endif
