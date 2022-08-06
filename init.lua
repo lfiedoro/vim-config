@@ -123,5 +123,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function() vim.highlight.on_yank { on_visual = false } end
 })
 
-vim.cmd [[runtime mappings.vim]]
+require 'ivyl.mappings'
 vim.cmd [[runtime filetypes.vim]]
