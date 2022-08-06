@@ -35,6 +35,12 @@ return require('packer').startup(function(use)
     vim.g.editorconfig_root_chdir = 1
   end }
 
+  use { 'nmac427/guess-indent.nvim', config = function()
+    require('guess-indent').setup {
+      filetype_exclude = { "gitcommit" }
+    }
+  end }
+
   use { 'lewis6991/gitsigns.nvim', config = function()
     require('gitsigns').setup()
   end }
