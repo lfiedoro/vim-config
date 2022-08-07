@@ -8,7 +8,9 @@ end
 return require('packer').startup(function(use)
   use 'ivyl/vim-bling'
   use { 'ivyl/highlight-annotate.nvim', config = function()
-    require'highlight-annotate'.setup()
+    require'highlight-annotate'.setup {
+      mappings = { prev_annotation = "[v", next_annotation = "]v" }
+    }
   end }
 
   use 'chreekat/vim-paren-crosshairs'
