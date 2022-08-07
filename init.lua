@@ -7,12 +7,14 @@ vim.g.mapleader = " "
 
 -- show relative line numbers in each window
 -- and use number column for signs
-vim.o.number          = true
+vim.wo.number         = true
 vim.wo.relativenumber = true
 vim.wo.signcolumn     = 'number'
 vim.api.nvim_create_autocmd("WinEnter", {
   group    = au_group,
   callback = function()
+    if vim.bo.buftype ~= "" then return end
+    vim.wo.number         = true
     vim.wo.relativenumber = true
     vim.wo.signcolumn     = 'number'
   end
@@ -26,7 +28,10 @@ vim.o.listchars = "tab:▸ "
 vim.wo.list = true
 vim.api.nvim_create_autocmd("WinEnter", {
   group    = au_group,
-  callback = function() vim.wo.list = true end
+  callback = function()
+    if vim.bo.buftype ~= "" then return end
+    vim.wo.list = true
+  end
 })
 
 -- highlight the line with the cursor
