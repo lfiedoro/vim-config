@@ -55,6 +55,7 @@ return require('packer').startup(function(use)
 
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use { 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim', config = function()
+    local telescope = require 'telescope'
     local builtin = require 'telescope.builtin'
     local themes = require 'telescope.themes'
     vim.keymap.set('n', '<C-p>', function() builtin.find_files(themes.get_dropdown{previewer = false}) end)
@@ -63,10 +64,10 @@ return require('packer').startup(function(use)
     vim.keymap.set('n', '<leader>fg', builtin.live_grep)
     vim.keymap.set('n', '<leader>fw', builtin.grep_string)
 
-    require'telescope'.setup { extensions =
+    telescope.setup { extensions =
       { fzf = { fuzzy = true, override_generic_sorter = true, override_file_sorter = true, case_mode = "smart_case", } }
     }
-    require'telescope'.load_extension('fzf')
+    telescope.load_extension('fzf')
   end }
 
   -- nvim-cmp
