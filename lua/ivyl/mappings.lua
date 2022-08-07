@@ -17,10 +17,19 @@ vim.keymap.set("t", "<C-w><C-l>", "<C-\\><C-n><C-w>l")
 
 -- <CR> - turn off hlsearch
 vim.keymap.set({ "n", "v" }, "<CR>", "<CMD>nohlsearch<CR>", silent)
+local nohl_group = vim.api.nvim_create_augroup("cmd-nofile-no-nohl", { clear = true })
 vim.api.nvim_create_autocmd("CmdwinEnter", {
-  group    = vim.api.nvim_create_augroup("cmd-no-nohl", { clear = true }),
+  group    = nohl_group,
   callback = function()
     vim.keymap.set("n", "<CR>", "<CR>", buffer)
+  end
+})
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group    = nohl_group,
+  callback = function()
+    if vim.bo.buftype == "nofile" or vim.bo.buftype == "quickfix" then
+      vim.keymap.set("n", "<CR>", "<CR>", buffer)
+    end
   end
 })
 
