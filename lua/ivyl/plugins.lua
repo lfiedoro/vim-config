@@ -5,9 +5,14 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
+local highligh_annotate_path = 'ivyl/highlight-annotate.nvim'
+if vim.fn.isdirectory(vim.env.HOME .. '/src/highlight-annotate.nvim') == 1 then
+  highligh_annotate_path =  '~/src/highlight-annotate.nvim'
+end
+
 return require('packer').startup(function(use)
   use 'ivyl/vim-bling'
-  use { 'ivyl/highlight-annotate.nvim', config = function()
+  use { highligh_annotate_path, config = function()
     require'highlight-annotate'.setup {
       mappings = { prev_annotation = "[v", next_annotation = "]v" }
     }
