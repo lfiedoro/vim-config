@@ -141,9 +141,14 @@ local function default_indent()
   vim.bo.sts = -1
   vim.bo.ts = 4
 end
-vim.api.nvim_create_autocmd("BufAdd", {
+vim.api.nvim_create_autocmd("BufReadPost", {
   group = au_group,
   callback = default_indent,
+})
+vim.api.nvim_create_autocmd("BufNewFile", {
+  group = au_group,
+  callback = default_indent,
+  once = true,
 })
 default_indent()
 
