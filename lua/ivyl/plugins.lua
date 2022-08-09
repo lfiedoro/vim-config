@@ -65,7 +65,7 @@ return require('packer').startup(function(use)
     local themes = require 'telescope.themes'
     vim.keymap.set('n', '<C-p>', function() builtin.find_files(themes.get_dropdown{previewer = false}) end)
     vim.keymap.set('n', '<C-A-P>', function() builtin.find_files(themes.get_dropdown{no_ignore = true, previewer = false}) end)
-    vim.keymap.set('n', '<leader>b', function() builtin.buffers(themes.get_dropdown{previewer=false}) end)
+    vim.keymap.set('n', '<leader>fb', function() builtin.buffers(themes.get_dropdown{previewer=false}) end)
     vim.keymap.set('n', '<leader>fg', builtin.live_grep)
     vim.keymap.set('n', '<leader>fw', builtin.grep_string)
 
