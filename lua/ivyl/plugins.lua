@@ -59,6 +59,7 @@ return require('packer').startup(function(use)
   -- telescope
 
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use 'nvim-telescope/telescope-symbols.nvim'
   use { 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim', config = function()
     local telescope = require 'telescope'
     local builtin = require 'telescope.builtin'
@@ -69,6 +70,7 @@ return require('packer').startup(function(use)
     vim.keymap.set('n', '<leader>fg', builtin.live_grep)
     vim.keymap.set('n', '<leader>fw', builtin.grep_string)
     vim.keymap.set('n', '<leader>ft', builtin.tags)
+    vim.keymap.set('n', '<leader>fs', function() builtin.symbols{sources={'emoji', 'math'}} end)
 
     telescope.setup { extensions =
       { fzf = { fuzzy = true, override_generic_sorter = true, override_file_sorter = true, case_mode = "smart_case", } }
