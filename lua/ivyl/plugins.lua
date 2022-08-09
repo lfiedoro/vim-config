@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
     vim.keymap.set('n', '<leader>fb', function() builtin.buffers(themes.get_dropdown{previewer=false}) end)
     vim.keymap.set('n', '<leader>fg', builtin.live_grep)
     vim.keymap.set('n', '<leader>fw', builtin.grep_string)
+    vim.keymap.set('n', '<leader>ft', builtin.tags)
 
     telescope.setup { extensions =
       { fzf = { fuzzy = true, override_generic_sorter = true, override_file_sorter = true, case_mode = "smart_case", } }
