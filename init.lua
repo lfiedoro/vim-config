@@ -4,6 +4,7 @@ vim.cmd [[colorscheme solarized]]
 
 -- use space as a leader
 vim.g.mapleader = " "
+vim.keymap.set({ 'n',  'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- show relative line numbers in each window
 -- and use number column for signs
