@@ -30,6 +30,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-repeat'
 
+  use "tversteeg/registers.nvim"
+
   use { 'numToStr/Comment.nvim', config = function() require'Comment'.setup() end }
 
   use { 'kana/vim-textobj-indent', requires = {'kana/vim-textobj-user'}}
