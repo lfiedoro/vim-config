@@ -182,7 +182,7 @@ return require('packer').startup(function(use)
   end }
 
   -- treesitter
-
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
   use { 'nvim-treesitter/nvim-treesitter', requires = { 'nvim-orgmode/orgmode' },
   run = function() require'nvim-treesitter.install'.update({ with_sync = true }) end,
   config = function()
@@ -202,6 +202,43 @@ return require('packer').startup(function(use)
           node_incremental = '<c-space>',
           node_decremental = '<c-backspace>',
         }
+      },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ['af'] = '@function.outer',
+            ['if'] = '@function.inner',
+            ['ac'] = '@class.outer',
+            ['ic'] = '@class.inner',
+          },
+        },
+        move = {
+          enable = true,
+          set_jumps = true,
+          goto_next_start = {
+            [']m'] = '@function.outer',
+            [']]'] = '@class.outer',
+          },
+          goto_next_end = {
+            [']M'] = '@function.outer',
+            [']['] = '@class.outer',
+          },
+          goto_previous_start = {
+            ['[m'] = '@function.outer',
+            ['[['] = '@class.outer',
+          },
+          goto_previous_end = {
+            ['[M'] = '@function.outer',
+            ['[]'] = '@class.outer',
+          },
+        },
+        swap = {
+          enable = true,
+          swap_next = { ['<leader>a'] = '@parameter.inner' },
+          swap_previous = { ['<leader>A'] = '@parameter.inner' },
+        },
       },
     }
   end }
