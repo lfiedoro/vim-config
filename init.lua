@@ -123,8 +123,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = au_group,
   pattern = "plugins.lua",
   callback = function()
-    package.loaded['ivyl.plugins'] = nil
-    require 'ivyl.plugins'.sync()
+    package.loaded['user.plugins'] = nil
+    require 'user.plugins'.sync()
   end
 })
 
@@ -153,4 +153,4 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 })
 default_indent()
 
-require 'ivyl.mappings'
+require 'user.mappings'
