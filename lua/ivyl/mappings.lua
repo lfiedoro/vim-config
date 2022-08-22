@@ -52,10 +52,10 @@ end
 vim.keymap.set("n", "<leader>cc", toggle_color_column)
 
 -- <C-direction> - text bubbling with - uses unimpaired
-vim.keymap.set("n", "<C-k>", "[e")
-vim.keymap.set("n", "<C-j>", "]e")
-vim.keymap.set("v", "<C-k>", "[egv")
-vim.keymap.set("v", "<C-j>", "]egv")
+vim.keymap.set("n", "<C-k>", "[e", { remap = true })
+vim.keymap.set("n", "<C-j>", "]e", { remap = true })
+vim.keymap.set("v", "<C-k>", "[egv", { remap = true })
+vim.keymap.set("v", "<C-j>", "]egv", { remap = true })
 
 -- command-mode: change behaior of <C-n> <C-p> to use the already typed text
 vim.keymap.set("c", "<C-p>", "<Up>")
