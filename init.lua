@@ -15,6 +15,7 @@ vim.api.nvim_create_autocmd("WinEnter", {
   group    = au_group,
   callback = function()
     if vim.bo.buftype ~= "" then return end
+    if vim.w.presentation_mode then return end
     vim.wo.number         = true
     vim.wo.relativenumber = true
     vim.wo.signcolumn     = 'number'
