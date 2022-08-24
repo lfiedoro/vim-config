@@ -18,8 +18,6 @@ return require('packer').startup(function(use)
     }
   end }
 
-  use 'chreekat/vim-paren-crosshairs'
-
   use 'dhruvasagar/vim-table-mode'
 
   use 'vim-scripts/matchit.zip'
