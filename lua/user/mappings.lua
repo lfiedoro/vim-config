@@ -118,3 +118,9 @@ vim.keymap.set('n', '<leader>ab', function()
     end
   }):find()
 end)
+
+-- :Present
+vim.api.nvim_create_user_command('Present', function ()
+  package.loaded['user.present'] = nil
+  require'user.present'
+end, { force = true })

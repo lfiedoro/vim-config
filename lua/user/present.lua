@@ -17,4 +17,3 @@ vim.cmd [[echo]]
 vim.keymap.set('n', '<Right>', ']a', { remap = true })
 vim.keymap.set('n', '<Left>',  '[a', { remap = true })
 
-package.loaded['user.present'] = nil
