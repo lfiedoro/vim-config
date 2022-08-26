@@ -11,6 +11,8 @@ if vim.fn.isdirectory(vim.env.HOME .. '/src/highlight-annotate.nvim') == 1 then
 end
 
 return require('packer').startup(function(use)
+  use { "catppuccin/nvim", as = "catppuccin" } -- for presentations
+
   use 'ivyl/vim-bling'
   use { highligh_annotate_path, config = function()
     require'highlight-annotate'.setup {

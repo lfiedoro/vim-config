@@ -17,3 +17,18 @@ vim.cmd [[echo]]
 vim.keymap.set('n', '<Right>', ']a', { remap = true })
 vim.keymap.set('n', '<Left>',  '[a', { remap = true })
 
+vim.g.catppuccin_flavour = "latte" -- latte, frappe, macchiato, mocha
+
+local colors = require("catppuccin.palettes").get_palette()
+require("catppuccin").setup {
+    dim_inactive = { enabled = true },
+    custom_highlights = {
+      MiniStatuslineModeInsert  = { bg = colors.sky, fg = colors.text },
+      MiniStatuslineModeVisual  = { bg = colors.pink },
+      MiniStatuslineModeReplace = { bg = colors.maroon },
+      MiniStatuslineModeCommand = { bg = colors.yellow },
+      MiniStatuslineModeOther   = { bg = colors.lavender },
+    },
+}
+
+vim.cmd [[colorscheme catppuccin]]
