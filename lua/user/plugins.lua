@@ -236,8 +236,8 @@ return require('packer').startup(function(use)
         },
         swap = {
           enable = true,
-          swap_next = { ['<leader>a'] = '@parameter.inner' },
-          swap_previous = { ['<leader>A'] = '@parameter.inner' },
+          swap_next = { ['<leader>p'] = '@parameter.inner' },
+          swap_previous = { ['<leader>P'] = '@parameter.inner' },
         },
       },
     }
