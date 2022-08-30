@@ -51,7 +51,7 @@ local c = {
   ErrorMsg  = { fg = red, { reverse } },
 
   Search    = { fg = yellow,  { standout } },
-  IncSearch = { fg = magenta, { standout } },
+  IncSearch = { fg = orange,  { standout } },
 
   MoreMsg = { fg = blue },
   ModeMsg = { fg = blue },
