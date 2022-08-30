@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
   end }
 
   use 'dhruvasagar/vim-table-mode'
+  use 'tommcdo/vim-lion'
 
   use 'vim-scripts/matchit.zip'
 
