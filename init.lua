@@ -6,6 +6,15 @@ vim.cmd [[colorscheme solarized]]
 vim.g.mapleader = " "
 vim.keymap.set({ 'n',  'v' }, '<Space>', '<Nop>', { silent = true })
 
+-- don't fold by default
+vim.wo.foldenable = false
+vim.api.nvim_create_autocmd("WinEnter", {
+  group    = au_group,
+  callback = function()
+    vim.wo.foldenable = false
+  end
+})
+
 -- show relative line numbers in each window
 -- and use number column for signs
 vim.wo.number         = true
