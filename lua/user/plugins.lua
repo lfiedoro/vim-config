@@ -201,7 +201,8 @@ return require('packer').startup(function(use)
     require'orgmode'.setup({
       org_agenda_files = {'~/sync/org/*'},
       org_default_notes_file = '~/sync/org/refile.org',
-      org_todo_keywords = {'TODO', 'WIP', '|', 'DONE'}
+      org_todo_keywords = {'TODO', 'WIP', '|', 'DONE'},
+      org_indent_mode = 'noindent',
     })
   end }
 
