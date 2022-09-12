@@ -174,6 +174,24 @@ return require('packer').startup(function(use)
     end
   end }
 
+  use {
+  "folke/zen-mode.nvim",
+  config = function()
+    require("zen-mode").setup {
+        window = {
+          width = 80,
+          options = {
+            signcolumn = "no",
+            number = false,
+            relativenumber = false,
+            cursorline = false,
+            cursorcolumn = false,
+          },
+        }
+    }
+  end
+  }
+
   -- orgmode
   use {'akinsho/org-bullets.nvim', config = function()
     require('org-bullets').setup()
