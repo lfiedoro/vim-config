@@ -12,6 +12,7 @@ end
 table.insert(slides, " THE END")
 
 local buf = vim.api.nvim_create_buf(true, true)
+local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
 vim.api.nvim_buf_set_name(buf, 'presentation')
 vim.api.nvim_win_set_buf(0, buf)
 
@@ -19,7 +20,7 @@ local function set_slide(nr)
   vim.api.nvim_buf_set_option(buf, 'modifiable', true)
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(slides[nr], '\n'))
   vim.api.nvim_buf_set_option(buf, 'modifiable', false)
-  vim.api.nvim_buf_set_option(buf, 'filetype', 'org')
+  vim.api.nvim_buf_set_option(buf, 'filetype', filetype)
 end
 
 local current_slide = 1
